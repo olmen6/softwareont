@@ -1,0 +1,11 @@
+.metadata
+#ignore all
+*
+
+#excludes
+!.cproject
+!.project
+!swont_ide.ioc
+!Core/
+!core/**
+!.gitignore
