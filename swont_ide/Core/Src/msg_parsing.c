@@ -5,46 +5,29 @@
  *      Author: Jelle J
  */
 
+#include "msg_parser.h"
 
 /**
- * @brief functie om inkomende berichten te parsen voor de individuele commando's
+ * @brief functie om inkomende berichten te parsen voor de individuele commando's. run "argList args;" voor het aanmaken van de struct.
  * @param msg, de array om door te parsen
+ * @param args, &adres van de struct waar de argumenten in moeten komen
  */
-
-//#include "msg_parser.h"
-#include <stdio.h>
-#include <string.h>
-#define TEKST "tekst"
-#define MAX_ARG_COUNT 8
-
-typedef struct {
-    char *tokens[MAX_ARG_COUNT];
-    int count;		//kan evt uint8_t aangezien we niet verder dan 8 hoeven tellen
-} argList;
-
-void parse(char *msg, argList *args)
+uint8_t parse(char *msg, argList *args)
 {
 	args->count = 0;
 	
 	char *tok = strtok(msg, ",");
 	
+	if (tok == NULL){
+		return (0);		//pas aan zodra onze error handling meer vast ligt
+	}
+
 	while (tok && args->count < MAX_ARG_COUNT){
 		args->tokens[args->count++] = tok;		//zet elke token in opvolgende posities van args.tokens
 		tok = strtok(NULL, ",");
 	}
+	return (1);
 }
 
-int main(void){
-	char msg[] = "tekst,10,20, wit, the quick brown fox jumps over the lazy dog, consolas,1,normaal";
-	
-	argList args;
-	parse(msg, &args);
-	
-	printf("Token count: %d\n", args.count);
-	unsigned char i;
-	for (i = 0; i < args.count; i++) {
-        printf("Token %d: %s\n", i, args.tokens[i]);
-    }
-}
 
 
