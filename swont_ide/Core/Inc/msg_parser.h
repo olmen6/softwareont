@@ -18,19 +18,67 @@
 #include <errno.h>
 
 //functie tokens
-#define TEXT "tekst"
-#define LINE "lijn"
-#define FILL "clearscherm"
-#define RECT "rechthoek"
+#define TEKST "tekst"
+#define LIJN "lijn"
+#define CLEARSCHERM "clearscherm"
+#define RECHTHOEK "rechthoek"
 #define BMP "bitmap"
-#define FIG "figuur"
-#define WAIT "wacht"
-#define REDO "herhaal"
+#define FIGUUR "figuur"
+#define WACHT "wacht"
+#define HERHAAL "herhaal"
+#define CIRKEL "cirkel"
+#define HELP "help"
 #define MAX_ARG_COUNT 12
 
+//functie prototypes
+/**************************************************************************************************************************************/
+
+uint8_t parse_msg();
+uint8_t process_msg();
+uint8_t call_tekst();
+uint8_t call_rechthoek();
+uint8_t call_lijn();
+uint8_t call_bitmap();
+uint8_t call_fill();
+uint8_t call_wacht();
+uint8_t call_cirkel();
+uint8_t call_herhaal();
+uint8_t call_figuur();
+
+/**************************************************************************************************************************************/
+
+
+//typedefs 
+/**************************************************************************************************************************************/
+
+//opgedeelde input array, elke opvolgende positie van tokens is de volgende token
 typedef struct {
     char *tokens[MAX_ARG_COUNT];
-    int count;		//kan evt uint8_t aangezien we niet verder dan 8 hoeven tellen
-} argList;
+    uint8_t count;		
+} argList;	
 
-uint8_t parse();
+//functie pointer typedef
+typedef uint8_t (*cmd_fn)(argList *args);	
+
+//look up table met de function pointers en commando namen
+typedef struct {
+    const char *name;		//naam van het commando
+    cmd_fn fn;				//functiepointer naar de bijbehorende call functie
+} cmd_entry;
+
+
+//lookup table setup
+cmd_entry commands[] = {
+		{TEKST, call_tekst},
+		{RECHTHOEK, call_rechthoek},
+		{LIJN, call_lijn},
+		{BMP, call_bitmap},
+		{CLEARSCHERM, call_fill},
+		{WACHT, call_wacht},
+		{CIRKEL, call_cirkel},
+		{HERHAAL, call_herhaal},
+		{FIGUUR, call_figuur},
+		{NULL, NULL}
+};
+
+/**************************************************************************************************************************************/
