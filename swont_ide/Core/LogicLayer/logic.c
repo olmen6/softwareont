@@ -1,17 +1,14 @@
 /*
  *
- *
- *
- *
  * logic.c
  *
  * Logic layer voor aanroepen van API funcies naar aanleiding van Front Layer
- *
- *
+ * 
+ * Nog toe te voegen: error handling, validatie van parameters
+ *                    Duidelijk commentaar per functie
  *
  *  */
 #include "logic.h"
-#include "stm32_ub_vga_screen.h"
 #include "api_draw_functies.h"
 #include <string.h>
 #include <stdlib.h>
@@ -23,15 +20,15 @@ static uint8_t color_from_string(const char *color)
     if (color[0] >= '0' && color[0] <= '9'){
         return (uint8_t)atoi(color);
     }
-    // simple Dutch/English name mapping
-    if (strcmp(color, "wit") == 0 || strcmp(color, "white") == 0) return VGA_COL_WHITE;
-    if (strcmp(color, "zwart") == 0 || strcmp(color, "black") == 0) return VGA_COL_BLACK;
-    if (strcmp(color, "rood") == 0 || strcmp(color, "red") == 0) return VGA_COL_RED;
-    if (strcmp(color, "groen") == 0 || strcmp(color, "green") == 0) return VGA_COL_GREEN;
-    if (strcmp(color, "blauw") == 0 || strcmp(color, "blue") == 0) return VGA_COL_BLUE;
-    if (strcmp(color, "geel") == 0 || strcmp(color, "yellow") == 0) return VGA_COL_YELLOW;
-    if (strcmp(color, "cyaan") == 0 || strcmp(color, "cyan") == 0) return VGA_COL_CYAN;
-    if (strcmp(color, "magenta") == 0 || strcmp(color, "pink") == 0) return VGA_COL_MAGENTA;
+    // Kleuren naam mapping
+    if (strcmp(color, "wit") == 0     return VGA_COL_WHITE;
+    if (strcmp(color, "zwart") == 0   return VGA_COL_BLACK;
+    if (strcmp(color, "rood") == 0    return VGA_COL_RED;
+    if (strcmp(color, "groen") == 0   return VGA_COL_GREEN;
+    if (strcmp(color, "blauw") == 0   return VGA_COL_BLUE;
+    if (strcmp(color, "geel") == 0    return VGA_COL_YELLOW;
+    if (strcmp(color, "cyaan") == 0   return VGA_COL_CYAN;
+    if (strcmp(color, "magenta") == 0 return VGA_COL_MAGENTA;
     // fallback: use white
     return VGA_COL_WHITE;
 }

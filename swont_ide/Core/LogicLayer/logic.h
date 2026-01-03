@@ -1,4 +1,4 @@
-/* logic.h - Logic layer API wrappers */
+/* logic.h - Logic layer naar API doorsturen/wrappers */
 #ifndef LOGIC_LAYER_H
 #define LOGIC_LAYER_H
 
