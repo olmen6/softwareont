@@ -6,6 +6,7 @@
  */
 
 #include "msg_parser.h"
+#include "logic.h"
 
 /**
  * @brief functie om inkomende berichten te parsen voor de individuele commando's. run "argList args;" voor het aanmaken van de struct.
@@ -85,8 +86,7 @@ uint8_t call_tekst(argList *args)
 	strcpy(modif, 		args->tokens[7]);
 
 	//API calling functie
-	//logicAPICalltxt(xp, yp, color, txtPrint, font, siz, modif);	//TODO
-	return (1);
+	return logicAPICalltxt(xp, yp, color, txtPrint, font, siz, modif);
 }
 
 /**
@@ -106,7 +106,7 @@ uint8_t call_fill(argList *args)
 	strcpy(color, args->tokens[1]);
 
 	//logicAPICallfill(color);								//TODO
-	return(1);
+	return logicAPICallfill(color);
 }
 
 /**
@@ -133,6 +133,7 @@ uint8_t call_lijn(argList *args)
 	strcpy(color, 	args->tokens[5]);
 
 	//logicAPICallLijn(x1p, y1p, x2p, y2p, color, siz);		//TODO
+	return logicAPICallLijn(x1p, y1p, x2p, y2p, color, siz);
 }
 
 /**
@@ -159,6 +160,7 @@ uint8_t call_rechthoek(argList *args)
 	strcpy(color, 		args->tokens[5]);
 
 	//logicAPICallRechthoek(x1p, y1p, x2p, y2p, color, filled);	//TODO
+	return logicAPICallRechthoek(x1p, y1p, x2p, y2p, color, filled);
 }
 
 /**
@@ -179,6 +181,7 @@ uint8_t call_bitmap(argList *args)
 	uint8_t yp =	atoi(args->tokens[3]);
 
 	//logicAPICallbitmap(bmpnr, xp, yp);					//TODO
+	return logicAPICallbitmap(bmpnr, xp, yp);
 }
 
 /**
@@ -221,6 +224,7 @@ uint8_t call_cirkel(argList *args)
 	strcpy(color, args->tokens[4]);
 
 	//logicAPICallcirkel(xp, yp, siz, color);				//TODO
+	return logicAPICallcirkel(xp, yp, siz, color);
 }
 
 /**
@@ -252,5 +256,7 @@ uint8_t call_figuur(argList *args)
 	strcpy(color, args->tokens[11]);
 
 	//logicAPICallFunc(xp1,yp1,xp2,yp2,xp3,yp3,xp4,yp4,xp5,yp5,color);	//TODO
+	(void)xp1; (void)yp1; (void)xp2; (void)yp2; (void)xp3; (void)yp3; (void)xp4; (void)yp4; (void)xp5; (void)yp5; (void)color;
+	return 0;
 }
 
