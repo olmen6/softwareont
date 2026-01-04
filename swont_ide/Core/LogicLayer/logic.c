@@ -21,14 +21,14 @@ static uint8_t color_from_string(const char *color)
         return (uint8_t)atoi(color);
     }
     // Kleuren naam mapping
-    if (strcmp(color, "wit") == 0     return VGA_COL_WHITE;
-    if (strcmp(color, "zwart") == 0   return VGA_COL_BLACK;
-    if (strcmp(color, "rood") == 0    return VGA_COL_RED;
-    if (strcmp(color, "groen") == 0   return VGA_COL_GREEN;
-    if (strcmp(color, "blauw") == 0   return VGA_COL_BLUE;
-    if (strcmp(color, "geel") == 0    return VGA_COL_YELLOW;
-    if (strcmp(color, "cyaan") == 0   return VGA_COL_CYAN;
-    if (strcmp(color, "magenta") == 0 return VGA_COL_MAGENTA;
+	if (strcmp(color, "wit") == 0)     return VGA_COL_WHITE;
+    if (strcmp(color, "zwart") == 0)   return VGA_COL_BLACK;
+    if (strcmp(color, "rood") == 0)    return VGA_COL_RED;
+    if (strcmp(color, "groen") == 0)   return VGA_COL_GREEN;
+    if (strcmp(color, "blauw") == 0)   return VGA_COL_BLUE;
+    if (strcmp(color, "geel") == 0)    return VGA_COL_YELLOW;
+    if (strcmp(color, "cyaan") == 0)   return VGA_COL_CYAN;
+    if (strcmp(color, "magenta") == 0) return VGA_COL_MAGENTA;
     // fallback: use white
     return VGA_COL_WHITE;
 }
