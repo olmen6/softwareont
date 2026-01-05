@@ -29,17 +29,19 @@ int color, int weight, int reserved)
 		{
 			//schrijf naar scherm
 			UB_VGA_SetPixel(x1,y1,color);
-			//breete van de lijn
-			for (int wx = -weight/2; wx <= weight/2; wx++) 
-			{
-            	for (int wy = -weight/2; wy <= weight/2; wy++) 
-				{
-            	    if (!(wx == 0 && wy == 0)) 
+			//breedte van de lijn
+			
+			//if ((y1 < y2-weight)||(x1 < x2-weight))
+			//{	
+	            for (int w_tel =1; w_tel <weight;w_tel++) 
+				{	
+					if(((y1+w_tel<=y2)||(x1+w_tel<=x2)))
 					{
-                 	   UB_VGA_SetPixel((x1 + wx), y1 + wy, color);
-                	}
-            	}
-        	}
+						UB_VGA_SetPixel((x1 + w_tel), y1, color);
+	               		UB_VGA_SetPixel((x1), y1 + w_tel, color);
+	               	}
+	            }
+	        //}
         	//naar volgende ding
 			int e2 = 2*error;
 			if (e2 >= dy)
@@ -63,4 +65,27 @@ int color, int weight, int reserved)
 	{
 		return 0; //error, de waardes liggen buiten het scherm
 	}
+}
+
+int API_draw_rectangle (int x, int y,int width,int height, int color,int filled, int reserved, int reserved2)
+{
+	if(filled)
+	{ //maak een vierkant
+		for(int telx=0;telx<width;telx++)
+			for(int tely=0;tely<height;tely++)
+				UB_VGA_SetPixel(telx+x,tely+y,color);
+	}else
+	{
+		for(int telx=0;telx<width;telx++)
+		{
+			UB_VGA_SetPixel(telx+x,y,color);
+			UB_VGA_SetPixel(telx+x,y+height,color);
+		}
+		for(int ytel=0;ytel<height;ytel++)
+		{
+			UB_VGA_SetPixel(x,y+ytel,color);
+			UB_VGA_SetPixel(width+x,y+ytel,color);
+		}
+	}
+
 }
