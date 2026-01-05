@@ -121,3 +121,9 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr)
 
     return 1;
 }
+
+
+int API_draw_text(int x_lup,int y_lup,int color,char*text,char*fontname,int fontsize,int fontstyle,int reserved)
+{
+
+}
