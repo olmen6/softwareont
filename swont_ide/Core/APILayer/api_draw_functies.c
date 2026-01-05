@@ -87,5 +87,37 @@ int API_draw_rectangle (int x, int y,int width,int height, int color,int filled,
 			UB_VGA_SetPixel(width+x,y+ytel,color);
 		}
 	}
+	return 1;
+}
 
+
+int API_draw_bitmap(int x_lup, int y_lup, int bm_nr)
+{
+    const uint16_t* bm_adres;
+
+    switch (bm_nr)
+    {
+        case 1:
+            bm_adres=bitmap1;
+            break;
+        case 2:
+            bm_adres=bitmap2;
+            break;
+        default:
+            bm_adres=bitmap3;
+            break;
+    }
+
+    for (int y=0;y<bm_height;y++)
+    {
+        for (int x=0;x<bm_width;x++)
+        {
+            int i=y * bm_height+x;
+            uint16_t kleur=bm_adres[i];
+            UB_VGA_SetPixel(x_lup+x,y_lup+y,
+                kleur);
+        }
+    }
+
+    return 1;
 }
