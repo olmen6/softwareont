@@ -23,7 +23,7 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
-
+#include "msg_parsing.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -51,6 +51,7 @@ input_vars input;
 volatile char container[1024];
 volatile int temp;
 volatile int key;
+char printing_done_flag = TRUE;
 
 /* USER CODE END PV */
 
@@ -116,13 +117,13 @@ int main(void)
   input.char_counter = 0;
   input.command_execute_flag = FALSE;
 
-  // HAl wants a memory location to store the charachter it receives from the UART
-  // We will pass it an array, but we will not use it. We declare our own variable in the interupt handler
+  // HAl wants a memory location to store the character it receives from the UART
+  // We will pass it an array, but we will not use it. We declare our own variable in the interrupt handler
   // See stm32f4xx_it.c
   HAL_UART_Receive_IT(&huart2, input.byte_buffer_rx, BYTE_BUFLEN);
 
   // Test to see if the screen reacts to UART
-  unsigned char colorTest = TRUE;
+  //unsigned char colorTest = TRUE;
 
   /* USER CODE END 2 */
 
@@ -130,12 +131,13 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  if(input.command_execute_flag == TRUE)
+	  if(input.command_execute_flag == TRUE && printing_done_flag == TRUE)
 	  {
 		  // Do some stuff
 		  printf("yes\n");
-		  colorTest = ~colorTest; // Toggle screen color
-		  UB_VGA_FillScreen(colorTest);
+		  argList args;
+		  parse_msg(input.line_rx_buffer, &args);
+		  process_msg(&args);
 
 		  // When finished reset the flag
 		  input.command_execute_flag = FALSE;
