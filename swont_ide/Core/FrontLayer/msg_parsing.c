@@ -8,6 +8,7 @@
 
 #include "msg_parsing.h"
 #include "logic.h"
+#include "../Inc/error.h"
 extern char printing_done_flag;
 
 //lookup table setup
@@ -37,7 +38,8 @@ uint8_t parse_msg(char *msg, argList *args)
 	char *tok = strtok(msg, ",");
 	
 	if (tok == NULL){
-		return (0);		//pas aan zodra onze error handling meer vast ligt
+		{ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "geen tokens in bericht" }; Error_Report(&err); }
+		return (0);
 	}
 
 	while (tok && args->count < MAX_ARG_COUNT){
@@ -55,7 +57,8 @@ uint8_t process_msg(const argList *args)
 {
     if (args->count == 0)
     {
-    	return (0);		//error code geen argument
+	    	{ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "geen argumenten" }; Error_Report(&err); }
+	    	return (0);
     }
 
 
@@ -104,6 +107,7 @@ uint8_t call_tekst(argList *args)
 
 	//API calling functie
 	//return logicAPICalltxt(xp, yp, color, txtPrint, font, siz, modif);*/
+	{ Error_t err = { .layer = LAYER_APP, .code = ERR_STATE, .module = "MsgParser", .msg = "tekst niet geïmplementeerd" }; Error_Report(&err); }
 	return 0;
 }
 
@@ -125,6 +129,7 @@ uint8_t call_fill(argList *args)
 
 	//logicAPICallfill(color);								//TODO
 	//return logicAPICallfill(color);*/
+	{ Error_t err = { .layer = LAYER_APP, .code = ERR_STATE, .module = "MsgParser", .msg = "fill niet geïmplementeerd" }; Error_Report(&err); }
 	return 0;
 }
 
@@ -180,6 +185,7 @@ uint8_t call_rechthoek(argList *args)
 
 	//logicAPICallRechthoek(x1p, y1p, x2p, y2p, color, filled);	//TODO
 	//return logicAPICallRechthoek(x1p, y1p, x2p, y2p, color, filled);*/
+	{ Error_t err = { .layer = LAYER_APP, .code = ERR_STATE, .module = "MsgParser", .msg = "rechthoek niet geïmplementeerd" }; Error_Report(&err); }
 	return 0;
 }
 
@@ -202,6 +208,7 @@ uint8_t call_bitmap(argList *args)
 
 	//logicAPICallbitmap(bmpnr, xp, yp);					//TODO
 	//return logicAPICallbitmap(bmpnr, xp, yp);*/
+	{ Error_t err = { .layer = LAYER_APP, .code = ERR_STATE, .module = "MsgParser", .msg = "bitmap niet geïmplementeerd" }; Error_Report(&err); }
 	return 0;
 }
 
@@ -211,7 +218,8 @@ uint8_t call_bitmap(argList *args)
  */
 uint8_t call_wacht(argList *args)
 {
-	return(0);		//error: deze doen we niet
+	{ Error_t err = { .layer = LAYER_APP, .code = ERR_STATE, .module = "MsgParser", .msg = "wacht niet ondersteund" }; Error_Report(&err); }
+	return(0); 		//error: deze doen we niet
 }
 
 /**
@@ -220,7 +228,8 @@ uint8_t call_wacht(argList *args)
  */
 uint8_t call_herhaal(argList *args)
 {
-	return(0);		//error deze doen we niet
+	{ Error_t err = { .layer = LAYER_APP, .code = ERR_STATE, .module = "MsgParser", .msg = "herhaal niet ondersteund" }; Error_Report(&err); }
+	return(0); 		//error deze doen we niet
 }
 
 /**
@@ -246,6 +255,7 @@ uint8_t call_cirkel(argList *args)
 
 	//logicAPICallcirkel(xp, yp, siz, color);				//TODO
 	//return logicAPICallcirkel(xp, yp, siz, color);*/
+	{ Error_t err = { .layer = LAYER_APP, .code = ERR_STATE, .module = "MsgParser", .msg = "cirkel niet geïmplementeerd" }; Error_Report(&err); }
 	return 0;
 }
 
@@ -279,6 +289,6 @@ uint8_t call_figuur(argList *args)
 
 	//logicAPICallFunc(xp1,yp1,xp2,yp2,xp3,yp3,xp4,yp4,xp5,yp5,color);	//TODO
 	(void)xp1; (void)yp1; (void)xp2; (void)yp2; (void)xp3; (void)yp3; (void)xp4; (void)yp4; (void)xp5; (void)yp5; (void)color;
-	*/return 0;
+	*/{ Error_t err = { .layer = LAYER_APP, .code = ERR_STATE, .module = "MsgParser", .msg = "figuur niet geïmplementeerd" }; Error_Report(&err); return 0; }
 }
 

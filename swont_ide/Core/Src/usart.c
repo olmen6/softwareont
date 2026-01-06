@@ -19,6 +19,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "usart.h"
+#include "../Inc/error.h"
 
 /* USER CODE BEGIN 0 */
 
@@ -39,9 +40,14 @@ void MX_USART2_UART_Init(void)
   huart2.Init.Mode = UART_MODE_TX_RX;
   huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
   huart2.Init.OverSampling = UART_OVERSAMPLING_16;
-  if (HAL_UART_Init(&huart2) != HAL_OK)
   {
-    Error_Handler();
+    HAL_StatusTypeDef status = HAL_UART_Init(&huart2);
+    if (status != HAL_OK)
+    {
+      ErrorCode_t ec = HAL_StatusToErrorCode(status);
+      { Error_t err = { .layer = LAYER_HW, .code = ec, .module = "UART", .msg = "HAL_UART_Init faalt" }; Error_Report(&err); }
+      Error_Handler();
+    }
   }
 
 }
