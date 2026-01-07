@@ -7,6 +7,7 @@
 
 #include "msg_parser.h"
 #include "logic.h"
+#include "error.h"
 
 /**
  * @brief functie om inkomende berichten te parsen voor de individuele commando's. run "argList args;" voor het aanmaken van de struct.
@@ -20,7 +21,8 @@ uint8_t parse_msg(char *msg, argList *args)
 	char *tok = strtok(msg, ",");
 	
 	if (tok == NULL){
-		return (0);		//pas aan zodra onze error handling meer vast ligt
+		{ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "geen tokens in bericht" }; Error_Report(&err); }
+		return (0);
 	}
 
 	while (tok && args->count < MAX_ARG_COUNT){
@@ -38,7 +40,8 @@ uint8_t process_msg(const argList *args)
 {
     if (args->count == 0)
     {
-    	return (0);		//error code geen argument
+	    	{ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "geen argumenten" }; Error_Report(&err); }
+	    	return (0);
     }
 
 
@@ -64,12 +67,9 @@ uint8_t process_msg(const argList *args)
  */
 uint8_t call_tekst(argList *args)
 {
-	//check voor argument aantal
-	if (args->count < 8){
-			return(0); 	//error code te weinig argumenten  	//TODO
-		} else if(args->count > 8){
-			return(0); 	//error code te veel argumenten 	//TODO
-		}
+    //check voor argument aantal
+    if (args->count < 8){ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "tekst: te weinig argumenten" }; Error_Report(&err); return 0; }
+    else if (args->count > 8){ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "tekst: te veel argumenten" }; Error_Report(&err); return 0; }
 
 	//integer argumenten
 	uint8_t xp = 		atoi(args->tokens[1]);
@@ -96,11 +96,8 @@ uint8_t call_tekst(argList *args)
 uint8_t call_fill(argList *args)
 {
 	//check voor argument aantal
-	if (args->count < 2){
-			return(0); 	//error code te weinig argumenten  	//TODO
-		} else if(args->count > 2){
-			return(0); 	//error code te veel argumenten 	//TODO
-		}
+	if (args->count < 2){ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "fill: te weinig argumenten" }; Error_Report(&err); return 0; }
+	else if(args->count > 2){ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "fill: te veel argumenten" }; Error_Report(&err); return 0; }
 	//kopiëer de string
 	char color[10];
 	strcpy(color, args->tokens[1]);
@@ -116,11 +113,8 @@ uint8_t call_fill(argList *args)
 uint8_t call_lijn(argList *args)
 {
 	//check voor argument aantal
-	if (args->count < 7){
-			return(0); 	//error code te weinig argumenten  	//TODO
-		} else if(args->count > 7){
-			return(0); 	//error code te veel argumenten 	//TODO
-		}
+	if (args->count < 7){ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "lijn: te weinig argumenten" }; Error_Report(&err); return 0; }
+	else if(args->count > 7){ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "lijn: te veel argumenten" }; Error_Report(&err); return 0; }
 
 	//integer argumenten
 	uint8_t x1p = 	atoi(args->tokens[1]);
@@ -143,11 +137,8 @@ uint8_t call_lijn(argList *args)
 uint8_t call_rechthoek(argList *args)
 {
 	//check voor argument aantal
-	if (args->count < 7){
-			return(0); 	//error code te weinig argumenten  	//TODO
-		} else if(args->count > 7){
-			return(0); 	//error code te veel argumenten 	//TODO
-		}
+	if (args->count < 7){ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "rechthoek: te weinig argumenten" }; Error_Report(&err); return 0; }
+	else if(args->count > 7){ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "rechthoek: te veel argumenten" }; Error_Report(&err); return 0; }
 
 	//integer argumenten
 	uint8_t x1p = 		atoi(args->tokens[1]);
@@ -170,11 +161,8 @@ uint8_t call_rechthoek(argList *args)
 uint8_t call_bitmap(argList *args)
 {
 	//check voor argument aantal
-	if (args->count < 4){
-			return(0); 	//error code te weinig argumenten  	//TODO
-		} else if(args->count > 4){
-			return(0); 	//error code te veel argumenten 	//TODO
-		}
+	if (args->count < 4){ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "bitmap: te weinig argumenten" }; Error_Report(&err); return 0; }
+	else if(args->count > 4){ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "bitmap: te veel argumenten" }; Error_Report(&err); return 0; }
 
 	uint8_t bmpnr = atoi(args->tokens[1]);
 	uint8_t xp = 	atoi(args->tokens[2]);
@@ -190,7 +178,8 @@ uint8_t call_bitmap(argList *args)
  */
 uint8_t call_wacht(argList *args)
 {
-	return(0);		//error: deze doen we niet
+	{ Error_t err = { .layer = LAYER_APP, .code = ERR_STATE, .module = "MsgParser", .msg = "wacht niet ondersteund" }; Error_Report(&err); }
+	return(0); 		//error: deze doen we niet
 }
 
 /**
@@ -199,7 +188,8 @@ uint8_t call_wacht(argList *args)
  */
 uint8_t call_herhaal(argList *args)
 {
-	return(0);		//error deze doen we niet
+	{ Error_t err = { .layer = LAYER_APP, .code = ERR_STATE, .module = "MsgParser", .msg = "herhaal niet ondersteund" }; Error_Report(&err); }
+	return(0); 		//error deze doen we niet
 }
 
 /**
@@ -209,11 +199,8 @@ uint8_t call_herhaal(argList *args)
 uint8_t call_cirkel(argList *args)
 {
 	//check voor argument aantal
-	if (args->count < 5){
-			return(0); 	//error code te weinig argumenten  	//TODO
-		} else if(args->count > 5){
-			return(0); 	//error code te veel argumenten 	//TODO
-		}
+	if (args->count < 5){ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "cirkel: te weinig argumenten" }; Error_Report(&err); return 0; }
+	else if(args->count > 5){ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "cirkel: te veel argumenten" }; Error_Report(&err); return 0; }
 
 	//integer argumenten
 	uint8_t xp  = atoi(args->tokens[1]);
@@ -234,11 +221,8 @@ uint8_t call_cirkel(argList *args)
 uint8_t call_figuur(argList *args)
 {
 	//check voor argument aantal
-	if (args->count < 12){
-			return(0); 	//error code te weinig argumenten  	//TODO
-		} else if(args->count > 12){
-			return(0); 	//error code te veel argumenten 	//TODO
-		}
+	if (args->count < 12){ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "figuur: te weinig argumenten" }; Error_Report(&err); return 0; }
+	else if(args->count > 12){ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "figuur: te veel argumenten" }; Error_Report(&err); return 0; }
 
 	//integer argumenten
 	uint8_t xp1 = atoi(args->tokens[1]);

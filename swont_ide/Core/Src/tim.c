@@ -19,6 +19,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "tim.h"
+#include "../Inc/error.h"
 
 /* USER CODE BEGIN 0 */
 
@@ -41,20 +42,35 @@ void MX_TIM1_Init(void)
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
   {
-    Error_Handler();
+    HAL_StatusTypeDef status = HAL_TIM_Base_Init(&htim1);
+    if (status != HAL_OK)
+    {
+      ErrorCode_t ec = HAL_StatusToErrorCode(status);
+      { Error_t err = { .layer = LAYER_HW, .code = ec, .module = "TIM", .msg = "HAL_TIM_Base_Init faalt" }; Error_Report(&err); }
+      Error_Handler();
+    }
   }
   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
-  if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
   {
-    Error_Handler();
+    HAL_StatusTypeDef status = HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig);
+    if (status != HAL_OK)
+    {
+      ErrorCode_t ec = HAL_StatusToErrorCode(status);
+      { Error_t err = { .layer = LAYER_HW, .code = ec, .module = "TIM", .msg = "HAL_TIM_ConfigClockSource faalt" }; Error_Report(&err); }
+      Error_Handler();
+    }
   }
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
   {
-    Error_Handler();
+    HAL_StatusTypeDef status = HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig);
+    if (status != HAL_OK)
+    {
+      ErrorCode_t ec = HAL_StatusToErrorCode(status);
+      { Error_t err = { .layer = LAYER_HW, .code = ec, .module = "TIM", .msg = "HAL_TIMEx_MasterConfigSynchronization faalt" }; Error_Report(&err); }
+      Error_Handler();
+    }
   }
 
 }
@@ -70,28 +86,48 @@ void MX_TIM2_Init(void)
   htim2.Init.Period = VGA_TIM2_HSYNC_PERIODE;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_PWM_Init(&htim2) != HAL_OK)
   {
-    Error_Handler();
+    HAL_StatusTypeDef status = HAL_TIM_PWM_Init(&htim2);
+    if (status != HAL_OK)
+    {
+      ErrorCode_t ec = HAL_StatusToErrorCode(status);
+      { Error_t err = { .layer = LAYER_HW, .code = ec, .module = "TIM", .msg = "HAL_TIM_PWM_Init faalt" }; Error_Report(&err); }
+      Error_Handler();
+    }
   }
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
   {
-    Error_Handler();
+    HAL_StatusTypeDef status = HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig);
+    if (status != HAL_OK)
+    {
+      ErrorCode_t ec = HAL_StatusToErrorCode(status);
+      { Error_t err = { .layer = LAYER_HW, .code = ec, .module = "TIM", .msg = "HAL_TIMEx_MasterConfigSynchronization faalt" }; Error_Report(&err); }
+      Error_Handler();
+    }
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
   sConfigOC.Pulse = VGA_TIM2_HTRIGGER_START - VGA_TIM2_DMA_DELAY;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_LOW;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
-  if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
   {
-    Error_Handler();
+    HAL_StatusTypeDef status = HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_3);
+    if (status != HAL_OK)
+    {
+      ErrorCode_t ec = HAL_StatusToErrorCode(status);
+      { Error_t err = { .layer = LAYER_HW, .code = ec, .module = "TIM", .msg = "HAL_TIM_PWM_ConfigChannel CH3 faalt" }; Error_Report(&err); }
+      Error_Handler();
+    }
   }
   sConfigOC.Pulse = VGA_TIM2_HSYNC_IMP;
-  if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
   {
-    Error_Handler();
+    HAL_StatusTypeDef status = HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4);
+    if (status != HAL_OK)
+    {
+      ErrorCode_t ec = HAL_StatusToErrorCode(status);
+      { Error_t err = { .layer = LAYER_HW, .code = ec, .module = "TIM", .msg = "HAL_TIM_PWM_ConfigChannel CH4 faalt" }; Error_Report(&err); }
+      Error_Handler();
+    }
   }
   HAL_TIM_MspPostInit(&htim2);
 
@@ -120,9 +156,14 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* tim_baseHandle)
     hdma_tim1_up.Init.Mode = DMA_NORMAL;
     hdma_tim1_up.Init.Priority = DMA_PRIORITY_VERY_HIGH;
     hdma_tim1_up.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
-    if (HAL_DMA_Init(&hdma_tim1_up) != HAL_OK)
     {
-      Error_Handler();
+      HAL_StatusTypeDef status = HAL_DMA_Init(&hdma_tim1_up);
+      if (status != HAL_OK)
+      {
+        ErrorCode_t ec = HAL_StatusToErrorCode(status);
+        { Error_t err = { .layer = LAYER_HW, .code = ec, .module = "TIM", .msg = "HAL_DMA_Init faalt" }; Error_Report(&err); }
+        Error_Handler();
+      }
     }
 
     __HAL_LINKDMA(tim_baseHandle,hdma[TIM_DMA_ID_UPDATE],hdma_tim1_up);

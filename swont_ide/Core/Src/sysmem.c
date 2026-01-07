@@ -25,6 +25,7 @@
 #include <errno.h>
 #include <stdio.h>
 #include <sys/types.h>
+#include "../Inc/error.h"
 
 /* Variables */
 extern int errno;
@@ -49,6 +50,7 @@ caddr_t _sbrk(int incr)
 	if (heap_end + incr > stack_ptr)
 	{
 		errno = ENOMEM;
+		{ Error_t err = { .layer = LAYER_MIDDLE, .code = ERR_UNKNOWN, .module = "SysMem", .msg = "_sbrk: onvoldoende geheugen" }; Error_Report(&err); }
 		return (caddr_t) -1;
 	}
 

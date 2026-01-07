@@ -24,6 +24,8 @@
 #include "usart.h"
 #include "gpio.h"
 #include "msg_parsing.h"
+#include "error.h"
+#include <stdio.h>
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -216,8 +218,12 @@ USART_PRINTF
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
-
+  Error_t err;
+  err.layer = LAYER_HW;
+  err.code = ERR_HW;
+  err.module = "MAIN";
+  err.msg = "Fataal: Error_Handler opgeroepen";
+  Error_Report(&err);
   /* USER CODE END Error_Handler_Debug */
 }
 
@@ -232,8 +238,15 @@ void Error_Handler(void)
 void assert_failed(uint8_t *file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
-  /* User can add his own implementation to report the file name and line number,
-     tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  char buf[80];
+  int n = snprintf(buf, sizeof(buf), "assert in %s:%lu", (char*)file, (unsigned long)line);
+  if (n <= 0) {
+    Error_t e = { .layer = LAYER_APP, .code = ERR_STATE, .module = "ASSERT", .msg = "assert_failed" };
+    Error_Report(&e);
+  } else {
+    Error_t e = { .layer = LAYER_APP, .code = ERR_STATE, .module = "ASSERT", .msg = buf };
+    Error_Report(&e);
+  }
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
