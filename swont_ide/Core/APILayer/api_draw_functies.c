@@ -103,6 +103,15 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr)
         case 2:
             bm_adres=bitmap2;
             break;
+        case 4:
+        	bm_adres=bitmap4;
+        	break;
+        case 5:
+        	bm_adres=bitmap5;
+        	break;
+        case 6:
+        	bm_adres=bitmap6;
+        	break;
         default:
             bm_adres=bitmap3;
             break;
@@ -123,7 +132,50 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr)
 }
 
 
+const unsigned char font8x8_basic[96][8] = {
+    {0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}, // 32 ' '
+    {0x18,  /* 00011000 */
+    0x18,  /* 00011000 */
+    0x18,  /* 00011000 */
+    0x18,  /* 00011000 */
+    0x18,  /* 00011000 */
+    0x00,  /* 00000000 */
+    0x18,  /* 00011000 */
+    0x00,  /* 00000000 */
+}, // 33 '!'
+    {0x6C,0x6C,0x24,0x00,0x00,0x00,0x00,0x00}, // 34 '"'
+    {0x6C,0x6C,0xFE,0x6C,0xFE,0x6C,0x6C,0x00}, // 35 '#'
+    {0x18,0x3E,0x58,0x3C,0x1A,0x7C,0x18,0x00}, // 36 '$'
+    {0xFF,0x0F,0xFF,0xFF,0x00,0x00,0x00,0xFF}, // 37 '%'
+    {0x38,0x6C,0x38,0x76,0xDC,0xCC,0x76,0x00}, // 38 '&'
+    {0x30,0x30,0x60,0x00,0x00,0x00,0x00,0x00}, // 39 '''
+    // ... vul aan als je meer tekens nodig hebt
+};
+
+int draw_char(int x,int y,int colour,char c,int scale)
+{
+    if ((c<32)||(c>127))
+        return 0;//invalid karakter
+    const unsigned char*karakter=font8x8_basic[c - 32];
+	for(int rij=0;rij<8;rij++)
+	{
+		unsigned char datarij=karakter[rij];
+		for(int kolom=0;kolom<8;kolom++)
+			if(datarij&(1<<(7-rij)))
+				UB_VGA_SetPixel(kolom+x,rij+y,colour);
+	}
+	return 1;
+}
+
 int API_draw_text(int x_lup,int y_lup,int color,char*text,char*fontname,int fontsize,int fontstyle,int reserved)
 {
-
+    int cursor_x = x_lup;
+    int cursor_y = y_lup;
+    while (*text)
+    {
+        int out=draw_char(cursor_x,cursor_y,color,*text,fontsize);
+        cursor_x+=(8* fontsize); 
+        text++;
+    }
+    return 0;
 }
