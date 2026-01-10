@@ -1,0 +1,7 @@
+../Core/LogicLayer/logic.c:16:16:color_from_string	12
+../Core/LogicLayer/logic.c:45:9:logicAPICallfill	1
+../Core/LogicLayer/logic.c:52:9:logicAPICallLijn	1
+../Core/LogicLayer/logic.c:63:9:logicAPICallRechthoek	3
+../Core/LogicLayer/logic.c:77:9:logicAPICallcirkel	1
+../Core/LogicLayer/logic.c:84:9:logicAPICallbitmap	1
+../Core/LogicLayer/logic.c:90:9:logicAPICalltxt	1

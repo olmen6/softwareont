@@ -1,0 +1,7 @@
+../Core/APILayer/api_draw_functies.c:9:5:API_draw_line	72	static
+../Core/APILayer/api_draw_functies.c:78:5:API_draw_rectangle	40	static
+../Core/APILayer/api_draw_functies.c:103:5:API_draw_bitmap	48	static
+../Core/APILayer/api_draw_functies.c:169:5:draw_char	72	static
+../Core/APILayer/api_draw_functies.c:198:5:API_draw_text	48	static
+../Core/APILayer/api_draw_functies.c:212:5:API_draw_fill	24	static
+../Core/APILayer/api_draw_functies.c:225:5:API_draw_circle	40	static
