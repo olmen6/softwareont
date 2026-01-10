@@ -33,12 +33,14 @@ static uint8_t color_from_string(const char *color)
     return VGA_COL_WHITE;
 }
 
+/*
 uint8_t logicAPICallfill(const char *color)
 {
     uint8_t c = color_from_string(color);
     int res = API_draw_fill((int)c);
     return (res != 0) ? 1 : 0;
 }
+*/
 
 uint8_t logicAPICallLijn(uint8_t x1p, uint8_t y1p, uint8_t x2p, uint8_t y2p, const char *color, uint8_t siz)
 {
@@ -50,6 +52,7 @@ uint8_t logicAPICallLijn(uint8_t x1p, uint8_t y1p, uint8_t x2p, uint8_t y2p, con
     return (res != 0) ? 1 : 0;
 }
 
+/*
 uint8_t logicAPICallRechthoek(uint8_t x1p, uint8_t y1p, uint8_t x2p, uint8_t y2p, const char *color, uint8_t filled)
 {
     uint8_t c = color_from_string(color);
@@ -77,3 +80,4 @@ uint8_t logicAPICalltxt(uint8_t xp, uint8_t yp, const char *color, const char *t
     int res = API_draw_text((int)xp, (int)yp, (int)c, txtPrint, font, (int)siz, modif);
     return (res != 0) ? 1 : 0;
 }
+*/
