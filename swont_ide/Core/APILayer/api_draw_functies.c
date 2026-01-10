@@ -2,6 +2,7 @@
 //api layer 
 #include "api_draw_functies.h"
 #include "../Inc/error.h"
+#include "bitmaps.h"
 
 extern char printing_done_flag;
 
