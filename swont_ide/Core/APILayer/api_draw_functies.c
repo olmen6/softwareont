@@ -95,6 +95,7 @@ int API_draw_rectangle (int x, int y,int width,int height, int color,int filled,
 			UB_VGA_SetPixel(width+x,y+ytel,color);
 		}
 	}
+	printing_done_flag = TRUE;
 	return 1;
 }
 
@@ -136,41 +137,60 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr)
         }
     }
 
-    return 1;
+	printing_done_flag = TRUE;
+	return 1;
 }
 
 
 const unsigned char font8x8_basic[96][8] = {
-    {0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}, // 32 ' '
-    {0x18,  /* 00011000 */
-    0x18,  /* 00011000 */
-    0x18,  /* 00011000 */
-    0x18,  /* 00011000 */
-    0x18,  /* 00011000 */
-    0x00,  /* 00000000 */
-    0x18,  /* 00011000 */
-    0x00,  /* 00000000 */
-}, // 33 '!'
-    {0x6C,0x6C,0x24,0x00,0x00,0x00,0x00,0x00}, // 34 '"'
-    {0x6C,0x6C,0xFE,0x6C,0xFE,0x6C,0x6C,0x00}, // 35 '#'
-    {0x18,0x3E,0x58,0x3C,0x1A,0x7C,0x18,0x00}, // 36 '$'
-    {0xFF,0x0F,0xFF,0xFF,0x00,0x00,0x00,0xFF}, // 37 '%'
-    {0x38,0x6C,0x38,0x76,0xDC,0xCC,0x76,0x00}, // 38 '&'
-    {0x30,0x30,0x60,0x00,0x00,0x00,0x00,0x00}, // 39 '''
-    // ... vul aan als je meer tekens nodig hebt
+	{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}, // 32 ' '
+	{0x18,0x18,0x18,0x18,0x18,0x00,0x18,0x00}, // 33 '!'
+	{0x6C,0x6C,0x24,0x00,0x00,0x00,0x00,0x00}, // 34 '"'
+	{0x6C,0x6C,0xFE,0x6C,0xFE,0x6C,0x6C,0x00}, // 35 '#'
+	{0x18,0x3E,0x58,0x3C,0x1A,0x7C,0x18,0x00}, // 36 '$'
+	{0xFF,0x0F,0xFF,0xFF,0x00,0x00,0x00,0xFF}, // 37 '%'
+	{0x38,0x6C,0x38,0x76,0xDC,0xCC,0x76,0x00}, // 38 '&'
+	{0x30,0x30,0x60,0x00,0x00,0x00,0x00,0x00}, // 39 '''
+	[40 ... 64] = {0},
+	{0x18,0x24,0x42,0x7E,0x42,0x42,0x42,0x00}, // 65 'A'
+	{0x7C,0x42,0x42,0x7C,0x42,0x42,0x7C,0x00}, // 66 'B'
+	{0x3C,0x42,0x40,0x40,0x40,0x42,0x3C,0x00}, // 67 'C'
+	{0x78,0x44,0x42,0x42,0x42,0x44,0x78,0x00}, // 68 'D'
+	{0x7E,0x40,0x40,0x7C,0x40,0x40,0x7E,0x00}, // 69 'E'
+	{0x7E,0x40,0x40,0x7C,0x40,0x40,0x40,0x00}, // 70 'F'
+	{0x3C,0x42,0x40,0x4E,0x42,0x42,0x3C,0x00}, // 71 'G'
+	{0x42,0x42,0x42,0x7E,0x42,0x42,0x42,0x00}, // 72 'H'
+	{0x3C,0x18,0x18,0x18,0x18,0x18,0x3C,0x00}, // 73 'I'
+	{0x1E,0x08,0x08,0x08,0x08,0x48,0x30,0x00}, // 74 'J'
+	[75 ... 95] = {0},
 };
 
+#include "../Inc/error.h"
 int draw_char(int x,int y,int colour,char c,int scale)
 {
-    if ((c<32)||(c>127))
-        return 0;//invalid karakter
-    const unsigned char*karakter=font8x8_basic[c - 32];
+	if ((c<32)||(c>127)) {
+		Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "draw_char", .msg = "Niet-ondersteund karakter" };
+		Error_Report(&err);
+		return 0;//invalid karakter
+	}
+	const unsigned char*karakter=font8x8_basic[c - 32];
+	// Check of karakter leeg is (alle bytes 0)
+	int leeg = 1;
+	for(int rij=0;rij<8;rij++)
+		if(karakter[rij]) leeg = 0;
+	if(leeg) {
+		Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "draw_char", .msg = "Leeg font patroon" };
+		Error_Report(&err);
+		return 0;
+	}
 	for(int rij=0;rij<8;rij++)
 	{
 		unsigned char datarij=karakter[rij];
 		for(int kolom=0;kolom<8;kolom++)
-			if(datarij&(1<<(7-rij)))
-				UB_VGA_SetPixel(kolom+x,rij+y,colour);
+			if (datarij & (1 << (7 - kolom)))
+			{
+				UB_VGA_SetPixel(kolom + x, rij + y, colour);
+			}
 	}
 	return 1;
 }
@@ -185,5 +205,49 @@ int API_draw_text(int x_lup,int y_lup,int color,char*text,char*fontname,int font
         cursor_x+=(8* fontsize); 
         text++;
     }
-    return 0;
+	printing_done_flag = TRUE;
+	return 1;
+}
+
+int API_draw_fill(int color)
+{
+	for (int y = 0; y < VGA_DISPLAY_Y; y++)
+	{
+		for (int x = 0; x < VGA_DISPLAY_X; x++)
+		{
+			UB_VGA_SetPixel(x, y, color);
+		}
+	}
+	printing_done_flag = TRUE;
+	return 1;
+}
+
+int API_draw_circle(int x_center, int y_center, int radius, int color, int reserved)
+{
+	if (radius <= 0) return 0;
+	int x = radius;
+	int y = 0;
+	int err = 0;
+
+	while (x >= y) {
+		UB_VGA_SetPixel(x_center + x, y_center + y, color);
+		UB_VGA_SetPixel(x_center + y, y_center + x, color);
+		UB_VGA_SetPixel(x_center - y, y_center + x, color);
+		UB_VGA_SetPixel(x_center - x, y_center + y, color);
+		UB_VGA_SetPixel(x_center - x, y_center - y, color);
+		UB_VGA_SetPixel(x_center - y, y_center - x, color);
+		UB_VGA_SetPixel(x_center + y, y_center - x, color);
+		UB_VGA_SetPixel(x_center + x, y_center - y, color);
+
+		y += 1;
+		if (err <= 0) {
+			err += 2*y + 1;
+		}
+		if (err > 0) {
+			x -= 1;
+			err -= 2*x + 1;
+		}
+	}
+	printing_done_flag = TRUE;
+	return 1;
 }

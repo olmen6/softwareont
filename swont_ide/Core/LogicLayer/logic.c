@@ -42,6 +42,13 @@ uint8_t logicAPICallfill(const char *color)
 }
 */
 
+uint8_t logicAPICallfill(const char *color)
+{
+    uint8_t c = color_from_string(color);
+    int res = API_draw_fill((int)c);
+    return (res != 0) ? 1 : 0;
+}
+
 uint8_t logicAPICallLijn(uint8_t x1p, uint8_t y1p, uint8_t x2p, uint8_t y2p, const char *color, uint8_t siz)
 {
     int x1 = x1p; int y1 = y1p; int x2 = x2p; int y2 = y2p;
@@ -52,12 +59,18 @@ uint8_t logicAPICallLijn(uint8_t x1p, uint8_t y1p, uint8_t x2p, uint8_t y2p, con
     return (res != 0) ? 1 : 0;
 }
 
-/*
+
 uint8_t logicAPICallRechthoek(uint8_t x1p, uint8_t y1p, uint8_t x2p, uint8_t y2p, const char *color, uint8_t filled)
 {
     uint8_t c = color_from_string(color);
     int x1 = x1p, y1 = y1p, x2 = x2p, y2 = y2p;
-    int res = API_draw_rectangle(x1, y1, x2, y2, (int)c, (int)filled);
+    int x = x1;
+    int y = y1;
+    int width = x2 - x1;
+    int height = y2 - y1;
+    if (width < 0) { width = -width; x = x2; }
+    if (height < 0) { height = -height; y = y2; }
+    int res = API_draw_rectangle(x, y, width, height, (int)c, (int)filled, 0, 0);
     return (res != 0) ? 1 : 0;
 }
 
@@ -77,7 +90,7 @@ uint8_t logicAPICallbitmap(uint8_t bmpnr, uint8_t xp, uint8_t yp)
 uint8_t logicAPICalltxt(uint8_t xp, uint8_t yp, const char *color, const char *txtPrint, const char *font, uint8_t siz, const char *modif)
 {
     uint8_t c = color_from_string(color);
-    int res = API_draw_text((int)xp, (int)yp, (int)c, txtPrint, font, (int)siz, modif);
+    int res = API_draw_text((int)xp, (int)yp, (int)c, (char *)txtPrint, (char *)font, (int)siz, 0, 0);
     return (res != 0) ? 1 : 0;
 }
-*/
+

@@ -1,0 +1,11 @@
+../Core/FrontLayer/msg_parsing.c:33:9:parse_msg	32	static
+../Core/FrontLayer/msg_parsing.c:56:9:process_msg	48	static
+../Core/FrontLayer/msg_parsing.c:86:9:call_tekst	184	static
+../Core/FrontLayer/msg_parsing.c:105:9:call_fill	40	static
+../Core/FrontLayer/msg_parsing.c:118:9:call_lijn	48	static
+../Core/FrontLayer/msg_parsing.c:133:9:call_rechthoek	48	static
+../Core/FrontLayer/msg_parsing.c:148:9:call_bitmap	24	static
+../Core/FrontLayer/msg_parsing.c:157:9:call_wacht	32	static
+../Core/FrontLayer/msg_parsing.c:163:9:call_herhaal	32	static
+../Core/FrontLayer/msg_parsing.c:169:9:call_cirkel	32	static
+../Core/FrontLayer/msg_parsing.c:179:9:call_figuur	32	static

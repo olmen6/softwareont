@@ -1,0 +1,7 @@
+../Core/APILayer/api_draw_functies.c:9:5:API_draw_line	15
+../Core/APILayer/api_draw_functies.c:78:5:API_draw_rectangle	6
+../Core/APILayer/api_draw_functies.c:103:5:API_draw_bitmap	8
+../Core/APILayer/api_draw_functies.c:169:5:draw_char	9
+../Core/APILayer/api_draw_functies.c:198:5:API_draw_text	2
+../Core/APILayer/api_draw_functies.c:212:5:API_draw_fill	3
+../Core/APILayer/api_draw_functies.c:225:5:API_draw_circle	5
