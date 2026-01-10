@@ -30,6 +30,7 @@
 #include <time.h>
 #include <sys/time.h>
 #include <sys/times.h>
+#include "../Inc/error.h"
 
 
 /* Variables */
@@ -57,6 +58,7 @@ int _getpid(void)
 int _kill(int pid, int sig)
 {
 	errno = EINVAL;
+	{ Error_t err = { .layer = LAYER_APP, .code = ERR_UNKNOWN, .module = "Syscalls", .msg = "_kill faalt" }; Error_Report(&err); }
 	return -1;
 }
 
@@ -91,6 +93,7 @@ __attribute__((weak)) int _write(int file, char *ptr, int len)
 
 int _close(int file)
 {
+	{ Error_t err = { .layer = LAYER_APP, .code = ERR_UNKNOWN, .module = "Syscalls", .msg = "_close faalt" }; Error_Report(&err); }
 	return -1;
 }
 
@@ -114,23 +117,27 @@ int _lseek(int file, int ptr, int dir)
 int _open(char *path, int flags, ...)
 {
 	/* Pretend like we always fail */
+	{ Error_t err = { .layer = LAYER_APP, .code = ERR_UNKNOWN, .module = "Syscalls", .msg = "_open faalt" }; Error_Report(&err); }
 	return -1;
 }
 
 int _wait(int *status)
 {
 	errno = ECHILD;
+	{ Error_t err = { .layer = LAYER_APP, .code = ERR_UNKNOWN, .module = "Syscalls", .msg = "_wait faalt" }; Error_Report(&err); }
 	return -1;
 }
 
 int _unlink(char *name)
 {
 	errno = ENOENT;
+	{ Error_t err = { .layer = LAYER_APP, .code = ERR_UNKNOWN, .module = "Syscalls", .msg = "_unlink faalt" }; Error_Report(&err); }
 	return -1;
 }
 
 int _times(struct tms *buf)
 {
+	{ Error_t err = { .layer = LAYER_APP, .code = ERR_UNKNOWN, .module = "Syscalls", .msg = "_times faalt" }; Error_Report(&err); }
 	return -1;
 }
 
@@ -143,17 +150,20 @@ int _stat(char *file, struct stat *st)
 int _link(char *old, char *new)
 {
 	errno = EMLINK;
+	{ Error_t err = { .layer = LAYER_APP, .code = ERR_UNKNOWN, .module = "Syscalls", .msg = "_link faalt" }; Error_Report(&err); }
 	return -1;
 }
 
 int _fork(void)
 {
 	errno = EAGAIN;
+	{ Error_t err = { .layer = LAYER_APP, .code = ERR_UNKNOWN, .module = "Syscalls", .msg = "_fork faalt" }; Error_Report(&err); }
 	return -1;
 }
 
 int _execve(char *name, char **argv, char **env)
 {
 	errno = ENOMEM;
+	{ Error_t err = { .layer = LAYER_APP, .code = ERR_UNKNOWN, .module = "Syscalls", .msg = "_execve faalt" }; Error_Report(&err); }
 	return -1;
 }

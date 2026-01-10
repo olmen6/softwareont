@@ -1,6 +1,10 @@
 //8-12-2023, Olmen Langelaan
 //api layer 
 #include "api_draw_functies.h"
+#include "../Inc/error.h"
+
+extern char printing_done_flag;
+
 int API_draw_line (int x1, int y1, int x2, int y2, 
 int color, int weight, int reserved) 
 {
@@ -59,10 +63,13 @@ int color, int weight, int reserved)
 				y1= y1+sy;
 			}
 		}
-		return 1;
+		printing_done_flag = TRUE;		//klaar voor het volgende commando
+		return 1; 	//lijn succesvol
 	}
 	else
 	{
+		printing_done_flag = TRUE; 		//klaar voor het volgende commando
+		{ Error_t err = { .layer = LAYER_MIDDLE, .code = ERR_PARAM, .module = "VGA", .msg = "coordinaten buiten scherm" }; Error_Report(&err); }
 		return 0; //error, de waardes liggen buiten het scherm
 	}
 }
