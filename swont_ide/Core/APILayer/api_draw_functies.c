@@ -192,6 +192,9 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr)
         case 6:
         	bm_adres=bitmap6;
         	break;
+        case 7:
+        	bm_adres=bitmap7;
+        	break;
         default:
             bm_adres=bitmap3;
             break;

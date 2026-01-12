@@ -1,0 +1,11 @@
+../Core/FrontLayer/msg_parsing.c:33:9:parse_msg	6
+../Core/FrontLayer/msg_parsing.c:74:9:process_msg	6
+../Core/FrontLayer/msg_parsing.c:118:9:call_tekst	3
+../Core/FrontLayer/msg_parsing.c:157:9:call_fill	3
+../Core/FrontLayer/msg_parsing.c:181:9:call_lijn	3
+../Core/FrontLayer/msg_parsing.c:208:9:call_rechthoek	3
+../Core/FrontLayer/msg_parsing.c:239:9:call_bitmap	3
+../Core/FrontLayer/msg_parsing.c:263:9:call_wacht	1
+../Core/FrontLayer/msg_parsing.c:273:9:call_herhaal	1
+../Core/FrontLayer/msg_parsing.c:283:9:call_cirkel	3
+../Core/FrontLayer/msg_parsing.c:312:9:call_figuur	3

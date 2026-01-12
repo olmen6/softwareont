@@ -95,7 +95,7 @@ uint8_t logicAPICallcirkel(uint8_t xp, uint8_t yp, uint8_t siz, const char *colo
 
 uint8_t logicAPICallbitmap(uint8_t bmpnr, uint8_t xp, uint8_t yp)
 {
-    if (bmpnr < 1 || bmpnr > 6)
+    if (bmpnr < 1 || bmpnr > 7)
     {
         Error_t err = { .layer = LAYER_MIDDLE, .code = ERR_PARAM, .module = "Logic", .msg = "bitmap: invalide bitmap nummer" };
         Error_Report(&err);
