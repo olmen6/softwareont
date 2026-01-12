@@ -132,50 +132,54 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr)
 }
 
 
-const unsigned char font8x8_basic[96][8] = {
-    {0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}, // 32 ' '
-    {0x18,  /* 00011000 */
-    0x18,  /* 00011000 */
-    0x18,  /* 00011000 */
-    0x18,  /* 00011000 */
-    0x18,  /* 00011000 */
-    0x00,  /* 00000000 */
-    0x18,  /* 00011000 */
-    0x00,  /* 00000000 */
-}, // 33 '!'
-    {0x6C,0x6C,0x24,0x00,0x00,0x00,0x00,0x00}, // 34 '"'
-    {0x6C,0x6C,0xFE,0x6C,0xFE,0x6C,0x6C,0x00}, // 35 '#'
-    {0x18,0x3E,0x58,0x3C,0x1A,0x7C,0x18,0x00}, // 36 '$'
-    {0xFF,0x0F,0xFF,0xFF,0x00,0x00,0x00,0xFF}, // 37 '%'
-    {0x38,0x6C,0x38,0x76,0xDC,0xCC,0x76,0x00}, // 38 '&'
-    {0x30,0x30,0x60,0x00,0x00,0x00,0x00,0x00}, // 39 '''
-    // ... vul aan als je meer tekens nodig hebt
-};
-
-int draw_char(int x,int y,int colour,char c,int scale)
+int API_draw_text(int x_lup,int y_lup,int color,char*text,char*fontname,int fontsize,char *fontstyle,int reserved)
 {
-    if ((c<32)||(c>127))
-        return 0;//invalid karakter
-    const unsigned char*karakter=font8x8_basic[c - 32];
-	for(int rij=0;rij<8;rij++)
+	while(*text)
 	{
-		unsigned char datarij=karakter[rij];
-		for(int kolom=0;kolom<8;kolom++)
-			if(datarij&(1<<(7-rij)))
-				UB_VGA_SetPixel(kolom+x,rij+y,colour);
+		
+	    int index = *text - 32;
+	    for (int row = 0; row < 8; row++)
+	    {	
+	    	unsigned char rowdata;
+	    	if(strcmp(fontname, "arial") == 0)				//is de fontname arial?
+	        	rowdata = arial[index][row];
+	        else //if(strcmp(fontname, "consolas") == 0)   //is de fontname consolas
+	        	rowdata=font2[index][row];	
+	        //else return 0; //invalide fontnaam evt error code moet je wel if,else, return uncommenten____________________________
+	        unsigned char b = rowdata;
+	        for (int i = 7; i >= 0; i--)
+	    	{
+	        	//printf("%d ", (b >> i) & 1);
+	        if((b>>i)&1)
+	        {
+	        	if(fontsize==1)//kleine text?
+	        	{
+	    			UB_VGA_SetPixel(7-i+x_lup,row+y_lup,color); 
+	    			if(strcmp(fontstyle, "vet") == 0)
+	    				UB_VGA_SetPixel(7-i+x_lup+1,row+y_lup,color); 
+	    		}
+	    		else //grote text?
+	    			//if(fontsize==2) 
+	    			{
+	    				UB_VGA_SetPixel(15-i*fontsize+x_lup,(row*fontsize)+y_lup,color);//maak een dikke pixel
+	    				UB_VGA_SetPixel(15-i*fontsize+x_lup+1,(row*fontsize)+y_lup,color);
+	    				UB_VGA_SetPixel(15-i*fontsize+x_lup+1,(row*fontsize)+y_lup+1,color);
+	    				UB_VGA_SetPixel(15-i*fontsize+x_lup,(row*fontsize)+y_lup+1,color);
+	    				if(strcmp(fontstyle, "vet") == 0) //dikgedrukte text
+	    				{
+	    					UB_VGA_SetPixel(15-i*fontsize+x_lup+2,(row*fontsize)+y_lup+1,color);
+	    					UB_VGA_SetPixel(15-i*fontsize+x_lup+2,(row*fontsize)+y_lup,color);
+						}
+	    			}
+	    			//else 
+	    			//return 0; //invalide fontsize   //evt error code dan moet je wel de if, else, return uncommenten __________________________
+				}
+			}
+	    }
+	    if((x_lup+= 8*fontsize)>(VGA_DISPLAY_X-8))	//gaat hij out of bounds?
+	    	y_lup+=fontsize*8;						//volgende regel
+	    x_lup= x_lup%(VGA_DISPLAY_X-8);				//zo ja? ga terug naar links
+	    text++;
 	}
-	return 1;
-}
-
-int API_draw_text(int x_lup,int y_lup,int color,char*text,char*fontname,int fontsize,int fontstyle,int reserved)
-{
-    int cursor_x = x_lup;
-    int cursor_y = y_lup;
-    while (*text)
-    {
-        int out=draw_char(cursor_x,cursor_y,color,*text,fontsize);
-        cursor_x+=(8* fontsize); 
-        text++;
-    }
-    return 0;
+	return 1; ///alles voltooid   XD
 }
