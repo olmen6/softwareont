@@ -258,19 +258,22 @@ int API_draw_text(int x_lup,int y_lup,int color,const char*text,const char*fontn
 	        	//printf("%d ", (b >> i) & 1);
 	        if((b>>i)&1)
 	        {
+	        	int a;
+	        	if(row<4){a=1;}else{a=0;}
+
 	        	if(fontsize==1)//kleine text?
 	        	{
-	    			UB_VGA_SetPixel(i+x_lup,row+y_lup,color);  // Changed: i instead of 7-i
+	    			UB_VGA_SetPixel(i+x_lup+a,row+y_lup,color);  // Changed: i instead of 7-i
 	    			if(strcmp(fontstyle, "vet") == 0)
 	    				UB_VGA_SetPixel(i+x_lup+1,row+y_lup,color);  // Changed: i instead of 7-i
 	    		}
 	    		else //grote text?
-	    			//if(fontsize==2) 
+	    			//if(fontsiz e==2)
 	    			{
-	    				UB_VGA_SetPixel(i*fontsize+x_lup,(row*fontsize)+y_lup,color);//maak een dikke pixel  // Changed: i*fontsize instead of 15-i*fontsize
-	    				UB_VGA_SetPixel(i*fontsize+x_lup+1,(row*fontsize)+y_lup,color);  // Changed
-	    				UB_VGA_SetPixel(i*fontsize+x_lup+1,(row*fontsize)+y_lup+1,color);  // Changed
-	    				UB_VGA_SetPixel(i*fontsize+x_lup,(row*fontsize)+y_lup+1,color);  // Changed
+	    				UB_VGA_SetPixel(i*fontsize+x_lup+(a*2),(row*fontsize)+y_lup,color);//maak een dikke pixel  // Changed: i*fontsize instead of 15-i*fontsize
+	    				UB_VGA_SetPixel(i*fontsize+x_lup+1+(a*2),(row*fontsize)+y_lup,color);  // Changed
+	    				UB_VGA_SetPixel(i*fontsize+x_lup+1+(a*2),(row*fontsize)+y_lup+1,color);  // Changed
+	    				UB_VGA_SetPixel(i*fontsize+x_lup+(a*2),(row*fontsize)+y_lup+1,color);  // Changed
 	    				if(strcmp(fontstyle, "vet") == 0) //dikgedrukte text
 	    				{
 	    					UB_VGA_SetPixel(i*fontsize+x_lup+2,(row*fontsize)+y_lup+1,color);  // Changed
