@@ -28,7 +28,7 @@ Core/ub_lib/stm32_ub_vga_screen.o: ../Core/ub_lib/stm32_ub_vga_screen.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- C:/Users/Jelle\ J/softont/swont_ide/Core/ub_lib/stm32_ub_vga_screen.h
+ C:/Users/Melle/SoftOnt/softwareont/swont_ide/Core/ub_lib/stm32_ub_vga_screen.h
 ../Core/ub_lib/stm32_ub_vga_screen.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -59,4 +59,4 @@ Core/ub_lib/stm32_ub_vga_screen.o: ../Core/ub_lib/stm32_ub_vga_screen.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-C:/Users/Jelle\ J/softont/swont_ide/Core/ub_lib/stm32_ub_vga_screen.h:
+C:/Users/Melle/SoftOnt/softwareont/swont_ide/Core/ub_lib/stm32_ub_vga_screen.h:
