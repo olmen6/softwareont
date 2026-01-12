@@ -32,18 +32,36 @@ cmd_entry commands[] = {
  */
 uint8_t parse_msg(char *msg, argList *args)
 {
+	if (msg == NULL || args == NULL)
+	{
+		Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "parse_msg: NULL pointer" };
+		Error_Report(&err);
+		printing_done_flag = TRUE;  // Must reset flag on error
+		return 0;
+	}
+
 	args->count = 0;
-	printing_done_flag = FALSE;
+	// Don't touch printing_done_flag here! Only API layer manages it
 	
-	char *tok = strtok(msg, ",");
+	// Make a working copy since strtok modifies the original
+	char msg_copy[1024];
+	strncpy(msg_copy, msg, sizeof(msg_copy) - 1);
+	msg_copy[sizeof(msg_copy) - 1] = '\0';
+	
+	char *tok = strtok(msg_copy, ",");
 	
 	if (tok == NULL){
-		{ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "geen tokens in bericht" }; Error_Report(&err); }
+		Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "geen tokens in bericht" };
+		Error_Report(&err);
+		printing_done_flag = TRUE;  // Must reset flag on error
 		return (0);
 	}
 
 	while (tok && args->count < MAX_ARG_COUNT){
-		args->tokens[args->count++] = tok;		//zet elke token in opvolgende posities van args.tokens
+		// Copy token string into the struct (safe copy)
+		strncpy(args->tokens[args->count], tok, MAX_TOKEN_LEN - 1);
+		args->tokens[args->count][MAX_TOKEN_LEN - 1] = '\0';  // Ensure null termination
+		args->count++;
 		tok = strtok(NULL, ",");
 	}
 	return (1);
@@ -55,23 +73,38 @@ uint8_t parse_msg(char *msg, argList *args)
  */
 uint8_t process_msg(const argList *args)
 {
-    if (args->count == 0)
+    if (args == NULL || args->count == 0)
     {
-	    	{ Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "geen argumenten" }; Error_Report(&err); }
-	    	return (0);
+	    Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "process_msg: geen argumenten" };
+	    Error_Report(&err);
+	    printing_done_flag = TRUE;
+	    return (0);
     }
 
 
     const char *cmd = args->tokens[0];
 
+    if (cmd == NULL)
+    {
+        Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "process_msg: commando NULL" };
+        Error_Report(&err);
+        printing_done_flag = TRUE;  // Ensure flag is reset on error
+        return 0;
+    }
+
 	int i;
     for (i = 0; commands[i].name != NULL; i++) {
         if (strcmp(cmd, commands[i].name) == 0) {
+            // Command found, execute it. API layer will handle printing_done_flag
             return commands[i].fn((argList *)args);
         }
     }
 
-    return (0); 		//error code onbekend argument
+    // Unknown command
+    Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "onbekend commando" };
+    Error_Report(&err);
+    printing_done_flag = TRUE;  // Reset flag on unrecognized command
+    return (0);
 }
 
 
@@ -83,12 +116,16 @@ uint8_t process_msg(const argList *args)
  * @param struct met pointers naar de argumenten in het ontvangen bericht (ln. 55 van msg_parser.h)
  */
 uint8_t call_tekst(argList *args)
-{/*
+{
 	//check voor argument aantal
 	if (args->count < 8){
-			return(0); 	//error code te weinig argumenten  	//TODO
+			Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "tekst: te weinig argumenten" };
+			Error_Report(&err);
+			return(0);
 		} else if(args->count > 8){
-			return(0); 	//error code te veel argumenten 	//TODO
+			Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "tekst: te veel argumenten" };
+			Error_Report(&err);
+			return(0);
 		}
 
 	//integer argumenten
@@ -97,18 +134,20 @@ uint8_t call_tekst(argList *args)
 	uint8_t siz = 		atoi(args->tokens[6]);
 	//string argumenten
 	char color[10];
-	strcpy(color, 		args->tokens[3]);
+	strncpy(color, 		args->tokens[3], sizeof(color) - 1);
+	color[sizeof(color) - 1] = '\0';
 	char txtPrint[80];
-	strcpy(txtPrint, 	args->tokens[4]);
+	strncpy(txtPrint, 	args->tokens[4], sizeof(txtPrint) - 1);
+	txtPrint[sizeof(txtPrint) - 1] = '\0';
 	char font[15];
-	strcpy(font, 		args->tokens[5]);
+	strncpy(font, 		args->tokens[5], sizeof(font) - 1);
+	font[sizeof(font) - 1] = '\0';
 	char modif[15];
-	strcpy(modif, 		args->tokens[7]);
+	strncpy(modif, 		args->tokens[7], sizeof(modif) - 1);
+	modif[sizeof(modif) - 1] = '\0';
 
 	//API calling functie
-	//return logicAPICalltxt(xp, yp, color, txtPrint, font, siz, modif);*/
-	{ Error_t err = { .layer = LAYER_APP, .code = ERR_STATE, .module = "MsgParser", .msg = "tekst niet geïmplementeerd" }; Error_Report(&err); }
-	return 0;
+	return logicAPICalltxt(xp, yp, color, txtPrint, font, siz, modif);
 }
 
 /**
@@ -116,21 +155,23 @@ uint8_t call_tekst(argList *args)
  * @param struct met pointers naar de argumenten in het ontvangen bericht (ln. 55 van msg_parser.h)
  */
 uint8_t call_fill(argList *args)
-{/*
+{
 	//check voor argument aantal
 	if (args->count < 2){
-			return(0); 	//error code te weinig argumenten  	//TODO
+			Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "fill: te weinig argumenten" };
+			Error_Report(&err);
+			return(0);
 		} else if(args->count > 2){
-			return(0); 	//error code te veel argumenten 	//TODO
+			Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "fill: te veel argumenten" };
+			Error_Report(&err);
+			return(0);
 		}
 	//kopiëer de string
 	char color[10];
-	strcpy(color, args->tokens[1]);
+	strncpy(color, args->tokens[1], sizeof(color) - 1);
+	color[sizeof(color) - 1] = '\0';
 
-	//logicAPICallfill(color);								//TODO
-	//return logicAPICallfill(color);*/
-	{ Error_t err = { .layer = LAYER_APP, .code = ERR_STATE, .module = "MsgParser", .msg = "fill niet geïmplementeerd" }; Error_Report(&err); }
-	return 0;
+	return logicAPICallfill(color);
 }
 
 /**
@@ -147,11 +188,11 @@ uint8_t call_lijn(argList *args)
 		}
 
 	//integer argumenten
-	uint8_t x1p = 	atoi(args->tokens[1]);
-	uint8_t y1p = 	atoi(args->tokens[2]);
-	uint8_t x2p = 	atoi(args->tokens[3]);
-	uint8_t y2p = 	atoi(args->tokens[4]);
-	uint8_t siz = 	atoi(args->tokens[6]);
+	uint16_t x1p = 	atoi(args->tokens[1]);
+	uint16_t y1p = 	atoi(args->tokens[2]);
+	uint16_t x2p = 	atoi(args->tokens[3]);
+	uint16_t y2p = 	atoi(args->tokens[4]);
+	uint16_t siz = 	atoi(args->tokens[6]);
 	//string argumenten
 	char color[10];
 	strcpy(color, 	args->tokens[5]);
@@ -165,12 +206,16 @@ uint8_t call_lijn(argList *args)
  * @param struct met pointers naar de argumenten in het ontvangen bericht (ln. 55 van msg_parser.h)
  */
 uint8_t call_rechthoek(argList *args)
-{/*
+{
 	//check voor argument aantal
 	if (args->count < 7){
-			return(0); 	//error code te weinig argumenten  	//TODO
+			Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "rechthoek: te weinig argumenten" };
+			Error_Report(&err);
+			return(0);
 		} else if(args->count > 7){
-			return(0); 	//error code te veel argumenten 	//TODO
+			Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "rechthoek: te veel argumenten" };
+			Error_Report(&err);
+			return(0);
 		}
 
 	//integer argumenten
@@ -181,12 +226,10 @@ uint8_t call_rechthoek(argList *args)
 	uint8_t filled = 	atoi(args->tokens[6]);
 	//string argumenten
 	char color[10];
-	strcpy(color, 		args->tokens[5]);
+	strncpy(color, 		args->tokens[5], sizeof(color) - 1);
+	color[sizeof(color) - 1] = '\0';
 
-	//logicAPICallRechthoek(x1p, y1p, x2p, y2p, color, filled);	//TODO
-	//return logicAPICallRechthoek(x1p, y1p, x2p, y2p, color, filled);*/
-	{ Error_t err = { .layer = LAYER_APP, .code = ERR_STATE, .module = "MsgParser", .msg = "rechthoek niet geïmplementeerd" }; Error_Report(&err); }
-	return 0;
+	return logicAPICallRechthoek(x1p, y1p, x2p, y2p, color, filled);
 }
 
 /**
@@ -194,22 +237,23 @@ uint8_t call_rechthoek(argList *args)
  * @param struct met pointers naar de argumenten in het ontvangen bericht (ln. 55 van msg_parser.h)
  */
 uint8_t call_bitmap(argList *args)
-{/*
+{
 	//check voor argument aantal
 	if (args->count < 4){
-			return(0); 	//error code te weinig argumenten  	//TODO
+			Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "bitmap: te weinig argumenten" };
+			Error_Report(&err);
+			return(0);
 		} else if(args->count > 4){
-			return(0); 	//error code te veel argumenten 	//TODO
+			Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "bitmap: te veel argumenten" };
+			Error_Report(&err);
+			return(0);
 		}
 
 	uint8_t bmpnr = atoi(args->tokens[1]);
 	uint8_t xp = 	atoi(args->tokens[2]);
 	uint8_t yp =	atoi(args->tokens[3]);
 
-	//logicAPICallbitmap(bmpnr, xp, yp);					//TODO
-	//return logicAPICallbitmap(bmpnr, xp, yp);*/
-	{ Error_t err = { .layer = LAYER_APP, .code = ERR_STATE, .module = "MsgParser", .msg = "bitmap niet geïmplementeerd" }; Error_Report(&err); }
-	return 0;
+	return logicAPICallbitmap(bmpnr, xp, yp);
 }
 
 /**
@@ -237,12 +281,16 @@ uint8_t call_herhaal(argList *args)
  * @param struct met pointers naar de argumenten in het ontvangen bericht (ln. 55 van msg_parser.h)
  */
 uint8_t call_cirkel(argList *args)
-{/*
+{
 	//check voor argument aantal
 	if (args->count < 5){
-			return(0); 	//error code te weinig argumenten  	//TODO
+			Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "cirkel: te weinig argumenten" };
+			Error_Report(&err);
+			return(0);
 		} else if(args->count > 5){
-			return(0); 	//error code te veel argumenten 	//TODO
+			Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "cirkel: te veel argumenten" };
+			Error_Report(&err);
+			return(0);
 		}
 
 	//integer argumenten
@@ -251,12 +299,10 @@ uint8_t call_cirkel(argList *args)
 	uint8_t siz = atoi(args->tokens[3]);
 	//strings
 	char color[10];
-	strcpy(color, args->tokens[4]);
+	strncpy(color, args->tokens[4], sizeof(color) - 1);
+	color[sizeof(color) - 1] = '\0';
 
-	//logicAPICallcirkel(xp, yp, siz, color);				//TODO
-	//return logicAPICallcirkel(xp, yp, siz, color);*/
-	{ Error_t err = { .layer = LAYER_APP, .code = ERR_STATE, .module = "MsgParser", .msg = "cirkel niet geïmplementeerd" }; Error_Report(&err); }
-	return 0;
+	return logicAPICallcirkel(xp, yp, siz, color);
 }
 
 /**
@@ -264,12 +310,16 @@ uint8_t call_cirkel(argList *args)
  * @param struct met pointers naar de argumenten in het ontvangen bericht (ln. 55 van msg_parser.h)
  */
 uint8_t call_figuur(argList *args)
-{/*
+{
 	//check voor argument aantal
 	if (args->count < 12){
-			return(0); 	//error code te weinig argumenten  	//TODO
+			Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "figuur: te weinig argumenten" };
+			Error_Report(&err);
+			return(0);
 		} else if(args->count > 12){
-			return(0); 	//error code te veel argumenten 	//TODO
+			Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "figuur: te veel argumenten" };
+			Error_Report(&err);
+			return(0);
 		}
 
 	//integer argumenten
@@ -282,13 +332,16 @@ uint8_t call_figuur(argList *args)
 	uint8_t xp4 = atoi(args->tokens[7]);
 	uint8_t yp4 = atoi(args->tokens[8]);
 	uint8_t xp5 = atoi(args->tokens[9]);
-	uint8_t yp5 = atoi(args->tokens[10]);	//dit kan nog wel wat schoner met een for loop
+	uint8_t yp5 = atoi(args->tokens[10]);
 	//string argumenten
 	char color[10];
-	strcpy(color, args->tokens[11]);
+	strncpy(color, args->tokens[11], sizeof(color) - 1);
+	color[sizeof(color) - 1] = '\0';
 
-	//logicAPICallFunc(xp1,yp1,xp2,yp2,xp3,yp3,xp4,yp4,xp5,yp5,color);	//TODO
+	// TODO: Implement figuur drawing with 5 points
 	(void)xp1; (void)yp1; (void)xp2; (void)yp2; (void)xp3; (void)yp3; (void)xp4; (void)yp4; (void)xp5; (void)yp5; (void)color;
-	*/{ Error_t err = { .layer = LAYER_APP, .code = ERR_STATE, .module = "MsgParser", .msg = "figuur niet geïmplementeerd" }; Error_Report(&err); return 0; }
+	Error_t err = { .layer = LAYER_APP, .code = ERR_STATE, .module = "MsgParser", .msg = "figuur: nog niet volledig geïmplementeerd" };
+	Error_Report(&err);
+	return 0;
 }
 

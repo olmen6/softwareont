@@ -27,31 +27,14 @@
 #define CIRKEL "cirkel"
 #define HELP "help"
 #define MAX_ARG_COUNT 12
+#define MAX_TOKEN_LEN 256  // Max length per token
 
-//functie prototypes
-/**************************************************************************************************************************************/
-
-uint8_t parse_msg();
-uint8_t process_msg();
-uint8_t call_tekst();
-uint8_t call_rechthoek();
-uint8_t call_lijn();
-uint8_t call_bitmap();
-uint8_t call_fill();
-uint8_t call_wacht();
-uint8_t call_cirkel();
-uint8_t call_herhaal();
-uint8_t call_figuur();
-
-/**************************************************************************************************************************************/
-
-
-//typedefs 
+//typedefs (moet voor prototypes!)
 /**************************************************************************************************************************************/
 
 //opgedeelde input array, elke opvolgende positie van tokens is de volgende token
 typedef struct {
-    char *tokens[MAX_ARG_COUNT];
+    char tokens[MAX_ARG_COUNT][MAX_TOKEN_LEN];  // Changed: store actual strings, not pointers
     uint8_t count;		
 } argList;	
 
@@ -63,6 +46,25 @@ typedef struct {
     const char *name;		//naam van het commando
     cmd_fn fn;				//functiepointer naar de bijbehorende call functie
 } cmd_entry;
+
+/**************************************************************************************************************************************/
+
+//functie prototypes
+/**************************************************************************************************************************************/
+
+uint8_t parse_msg(char *msg, argList *args);
+uint8_t process_msg(const argList *args);
+uint8_t call_tekst(argList *args);
+uint8_t call_rechthoek(argList *args);
+uint8_t call_lijn(argList *args);
+uint8_t call_bitmap(argList *args);
+uint8_t call_fill(argList *args);
+uint8_t call_wacht(argList *args);
+uint8_t call_cirkel(argList *args);
+uint8_t call_herhaal(argList *args);
+uint8_t call_figuur(argList *args);
+
+/**************************************************************************************************************************************/
 
 /**************************************************************************************************************************************/
 
