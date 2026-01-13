@@ -230,7 +230,7 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr)
         case 6:
         	bm_adres=bitmap6;
         	break;
-        case 7:
+        case 0:
         	bm_adres=bitmap7;
         	break;
         default:
