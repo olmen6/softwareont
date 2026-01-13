@@ -33,7 +33,7 @@
 #define TXTARGNUM 8
 #define FILLARGNUM 2
 #define LNARGNUM 7
-#define RECARGNUM 7
+#define RECTARGNUM 7
 #define BMPARGNUM 4
 #define CIRKARGNUM 5
 #define FIGARGNUM 12
