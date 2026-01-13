@@ -228,7 +228,7 @@ uint8_t logicAPICallbitmap(uint8_t bmpnr, uint16_t xp, uint16_t yp)
  */
 uint8_t logicAPICalltxt(uint16_t xp, uint16_t yp, const char *color, const char *txtPrint, const char *font, uint16_t siz, const char *modif)
 {
-    if (color == NULL || strlen(color) == 0 || color[0] == ' ')
+    if (color == NULL || strlen(color) == 0)
     {
         Error_t err = { .layer = LAYER_MIDDLE, .code = ERR_PARAM, .module = "Tekst", .msg = "text: Kleur invalid" };
         Error_Report(&err);
