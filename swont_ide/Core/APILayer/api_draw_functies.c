@@ -10,6 +10,10 @@ extern char printing_done_flag;
 extern const unsigned char arial[96][8];
 extern const unsigned char font2[96][8];
 
+/**
+ * @brief API functie dat alle pixels op een gegeven kleur instelt
+ * @param1 color, 8 bits binaire waarde van de kleur; 0brrrgggbb
+ */
 int API_draw_fill(int color)
 {
 	for(int x = 0; x < VGA_DISPLAY_X; x++)
@@ -23,6 +27,14 @@ int API_draw_fill(int color)
 	return 1;
 }
 
+/**
+ * @brief API functie om een cirkel in de VGA buffer te maken van een bepaalde kleur. de dikte of opvulling hiervan is niet geïmplementeerd.
+ * @param1 x, het x coördinaat van het startpunt
+ * @param2 y, het y coördinaat van het startpunt
+ * @param3 radius, de straal van de gewenste cirkel
+ * @param4 color, 8 bits binaire waarde van de kleur; 0brrrgggbb
+ * @param5 reserved, ongebruikt, kan toegepast worden voor eventuele opvulling van de cirkel. Momenteel wordt hier enkel NULL in gezet bij het aanroepen.
+ */
 int API_draw_circle(int x, int y, int radius, int color, int reserved)
 {
 	// Midpoint circle algorithm
@@ -57,6 +69,16 @@ int API_draw_circle(int x, int y, int radius, int color, int reserved)
 	return 1;
 }
 
+/**
+ * @brief API functie met toepassing van het Bresenhams lijnalgoritme voor het maken van lijnen in de VGA buffer.
+ * @param1 x1, het x coördinaat van het eerste punt
+ * @param2 y1, het y coördinaat van het eerste punt
+ * @param3 x2, het x coördinaat van het tweede punt
+ * @param4 y2, het y coördinaat van het tweede punt
+ * @param5 color, 8 bits binaire waarde van de kleur; 0brrrgggbb
+ * @param6 weight, de dikte van de lijn
+ * @param7 reserved, ongebruikt. gebruik "NULL" bij het aanroepen van deze functie
+ */
 int API_draw_line (int x1, int y1, int x2, int y2,
 int color, int weight, int reserved) 
 {
@@ -126,6 +148,17 @@ int color, int weight, int reserved)
 	}
 }
 
+/**
+ * @brief API functie om een rechthoek te maken in de VGA buffer
+ * @param1 x, coördinaat van het meest links boven punt van de rechthoek
+ * @param2 y, coördinaat van het meest links boven punt van de rechthoek
+ * @param3 width, breedte van de rechthoek
+ * @param4, height, lengte van de rechthoek
+ * @param5 color, 8 bits binaire waarde van de kleur; 0brrrgggbb
+ * @param6 filled, TRUE of FALSE aanwijzing of de pixels binnen de rechthoek ook gekleurd moeten worden
+ * @param7 reserved, ongebruikt. gebruik "NULL" bij het aanroepen van deze functie
+ * @param8 reserved2, ongebruikt. gebruik "NULL" bij het aanroepen van deze functie
+ */
 int API_draw_rectangle (int x, int y,int width,int height, int color,int filled, int reserved, int reserved2)
 {
 	// Validate coordinates
@@ -160,7 +193,12 @@ int API_draw_rectangle (int x, int y,int width,int height, int color,int filled,
 	return 1;
 }
 
-
+/**
+ * @brief API functie dat een bitmap zoal deze in de flash is opgeslagen in bitmaps.h in de VGA buffer print
+ * @param1 x_lup
+ * @param2 y_lup
+ * @param3 bm_nr index van de gewenste bitmap. Zie bitmaps.h voor verklaring welke index welke bitmap is
+ */
 int API_draw_bitmap(int x_lup, int y_lup, int bm_nr)
 {
     // Validate coordinates
@@ -215,7 +253,17 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr)
     return 1;
 }
 
-
+/**
+ * @brief API functie om tekst te printen in de VGA buffer
+ * @param1 x_lup
+ * @param2 y_lup
+ * @param3 color, 8 bits binaire waarde van de kleur; 0brrrgggbb
+ * @param4 tekst, pointer naar de string van tekst dat geprint moet worden
+ * @param5 fontname, pointer naar de naar de string wat aangeeft welk lettertype gebruikt moet worden
+ * @param6 fontsize, waarde 1 of 2 wat aangeeft welke tekstgrootte. hoger dan 2 tekstgrootte werkt ook maar verstoort de tekst
+ * @param7 fontstyle, pointer naar string: vet, normaal of cursief
+ * @param8 reserved, ongebruikt. gebruik "NULL" bij het aanroepen van deze functie
+ */
 int API_draw_text(int x_lup,int y_lup,int color,const char*text,const char*fontname,int fontsize,const char *fontstyle,int reserved)
 {
 	// Validate input
