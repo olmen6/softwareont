@@ -40,6 +40,7 @@ static uint8_t color_from_string(const char *color)
     if (strcmp(color, "cyaan") == 0)   return VGA_COL_CYAN;
     if (strcmp(color, "magenta") == 0) return VGA_COL_MAGENTA;
     // fallback: gebruik geel
+
     return VGA_COL_YELLOW;
 }
 
@@ -56,9 +57,9 @@ static uint8_t color_from_string(const char *color)
  */
 uint8_t logicAPICallfill(const char *color)
 {
-    if (color == NULL || strlen(color) == 0 || color[0] == ' ')
+    if (color == NULL || strlen(color) == 0)
     {
-        Error_t err = { .layer = LAYER_MIDDLE, .code = ERR_PARAM, .module = "Fill", .msg = "fill: color NULL/leeg/ruimte" };
+        Error_t err = { .layer = LAYER_MIDDLE, .code = ERR_PARAM, .module = "Fill", .msg = "fill: kleur  NULL/leeg/ruimte" };
         Error_Report(&err);
         return 0;
     }
@@ -82,12 +83,13 @@ uint8_t logicAPICallfill(const char *color)
  */
 uint8_t logicAPICallLijn(uint16_t x1p, uint16_t y1p, uint16_t x2p, uint16_t y2p, const char *color, uint8_t siz)
 {
-    if (color == NULL || strlen(color) == 0 || color[0] == ' ' || siz == 0)
+    if (color == NULL || strlen(color) == 0 || siz == 0)
     {
         Error_t err = { .layer = LAYER_MIDDLE, .code = ERR_PARAM, .module = "Lijn", .msg = "lijn: color/size invalid" };
         Error_Report(&err);
         return 0;
     }
+
     if (x1p > MAX_X || y1p > MAX_Y || x2p > MAX_X || y2p > MAX_Y)
     {
         Error_t err = { .layer = LAYER_MIDDLE, .code = ERR_PARAM, .module = "Lijn", .msg = "lijn: coordinates out of bounds" };
@@ -117,7 +119,7 @@ uint8_t logicAPICallLijn(uint16_t x1p, uint16_t y1p, uint16_t x2p, uint16_t y2p,
  */
 uint8_t logicAPICallRechthoek(uint16_t x1p, uint16_t y1p, uint16_t x2p, uint16_t y2p, const char *color, uint8_t filled)
 {
-    if (color == NULL || strlen(color) == 0 || color[0] == ' ')
+    if (color == NULL || strlen(color) == 0 )
     {
         Error_t err = { .layer = LAYER_MIDDLE, .code = ERR_PARAM, .module = "Rechthoek", .msg = "rechthoek: kleur invalid" };
         Error_Report(&err);
@@ -135,8 +137,8 @@ uint8_t logicAPICallRechthoek(uint16_t x1p, uint16_t y1p, uint16_t x2p, uint16_t
         Error_Report(&err);
         return 0;
     }
-    uint8_t c = color_from_string(color);
     int x1 = x1p, y1 = y1p, x2 = x2p, y2 = y2p;
+    uint8_t c = color_from_string(color);
     // Aanroepen van API functie
     // Returnt 1 bij succes
     int res = API_draw_rectangle(x1, y1, x2, y2, (int)c, (int)filled, 0, 0);
@@ -156,7 +158,8 @@ uint8_t logicAPICallRechthoek(uint16_t x1p, uint16_t y1p, uint16_t x2p, uint16_t
  */
 uint8_t logicAPICallcirkel(uint16_t xp, uint16_t yp, uint16_t siz, const char *color)
 {
-    if (color == NULL || strlen(color) == 0 || color[0] == ' ' || siz == 0)
+
+    if (color == NULL || strlen(color) == 0 || siz == 0)
     {
         Error_t err = { .layer = LAYER_MIDDLE, .code = ERR_PARAM, .module = "Cirkel", .msg = "cirkel: color of size invalide" };
         Error_Report(&err);
@@ -194,7 +197,7 @@ uint8_t logicAPICallcirkel(uint16_t xp, uint16_t yp, uint16_t siz, const char *c
  */
 uint8_t logicAPICallbitmap(uint8_t bmpnr, uint16_t xp, uint16_t yp)
 {
-    if (bmpnr < 1 || bmpnr > 7)
+    if (bmpnr < 0 || bmpnr > 6)
     {
         Error_t err = { .layer = LAYER_MIDDLE, .code = ERR_PARAM, .module = "Bitmap", .msg = "bitmap: bmpnr buiten range (1-7)" };
         Error_Report(&err);
@@ -228,7 +231,8 @@ uint8_t logicAPICallbitmap(uint8_t bmpnr, uint16_t xp, uint16_t yp)
  */
 uint8_t logicAPICalltxt(uint16_t xp, uint16_t yp, const char *color, const char *txtPrint, const char *font, uint16_t siz, const char *modif)
 {
-    if (color == NULL || strlen(color) == 0 || color[0] == ' ')
+
+    if (color == NULL || strlen(color) == 0)
     {
         Error_t err = { .layer = LAYER_MIDDLE, .code = ERR_PARAM, .module = "Tekst", .msg = "text: Kleur invalid" };
         Error_Report(&err);
