@@ -48,7 +48,7 @@ uint8_t parse_msg(char *msg, argList *args)
 	strncpy(msg_copy, msg, sizeof(msg_copy) - 1);
 	msg_copy[sizeof(msg_copy) - 1] = '\0';
 	
-	char *tok = strtok(msg_copy, "TOKEN");
+	char *tok = strtok(msg_copy, TOKEN);
 	
 	if (tok == NULL){
 		Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "geen tokens in bericht" };
@@ -62,7 +62,7 @@ uint8_t parse_msg(char *msg, argList *args)
 		strncpy(args->tokens[args->count], tok, MAX_TOKEN_LEN - 1);
 		args->tokens[args->count][MAX_TOKEN_LEN - 1] = '\0';  // Ensure null termination
 		args->count++;
-		tok = strtok(NULL, "TOKEN");
+		tok = strtok(NULL, TOKEN);
 	}
 	return (1);
 }
