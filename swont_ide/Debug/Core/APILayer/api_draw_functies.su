@@ -1,6 +1,6 @@
-../Core/APILayer/api_draw_functies.c:13:5:API_draw_fill	24	static
-../Core/APILayer/api_draw_functies.c:26:5:API_draw_circle	40	static
-../Core/APILayer/api_draw_functies.c:60:5:API_draw_line	72	static
-../Core/APILayer/api_draw_functies.c:129:5:API_draw_rectangle	56	static
-../Core/APILayer/api_draw_functies.c:164:5:API_draw_bitmap	56	static
-../Core/APILayer/api_draw_functies.c:219:5:API_draw_text	72	static
+../Core/APILayer/api_draw_functies.c:17:5:API_draw_fill	24	static
+../Core/APILayer/api_draw_functies.c:38:5:API_draw_circle	40	static
+../Core/APILayer/api_draw_functies.c:82:5:API_draw_line	72	static
+../Core/APILayer/api_draw_functies.c:162:5:API_draw_rectangle	56	static
+../Core/APILayer/api_draw_functies.c:202:5:API_draw_bitmap	56	static
+../Core/APILayer/api_draw_functies.c:267:5:API_draw_text	80	static

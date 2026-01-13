@@ -2,10 +2,10 @@
 ../Core/FrontLayer/msg_parsing.c:74:9:process_msg	64	static
 ../Core/FrontLayer/msg_parsing.c:118:9:call_tekst	192	static
 ../Core/FrontLayer/msg_parsing.c:157:9:call_fill	56	static
-../Core/FrontLayer/msg_parsing.c:181:9:call_lijn	56	static
-../Core/FrontLayer/msg_parsing.c:208:9:call_rechthoek	72	static
-../Core/FrontLayer/msg_parsing.c:239:9:call_bitmap	48	static
-../Core/FrontLayer/msg_parsing.c:263:9:call_wacht	32	static
-../Core/FrontLayer/msg_parsing.c:273:9:call_herhaal	32	static
-../Core/FrontLayer/msg_parsing.c:283:9:call_cirkel	56	static
-../Core/FrontLayer/msg_parsing.c:312:9:call_figuur	72	static
+../Core/FrontLayer/msg_parsing.c:181:9:call_lijn	80	static
+../Core/FrontLayer/msg_parsing.c:212:9:call_rechthoek	80	static
+../Core/FrontLayer/msg_parsing.c:243:9:call_bitmap	48	static
+../Core/FrontLayer/msg_parsing.c:267:9:call_wacht	32	static
+../Core/FrontLayer/msg_parsing.c:277:9:call_herhaal	32	static
+../Core/FrontLayer/msg_parsing.c:287:9:call_cirkel	56	static
+../Core/FrontLayer/msg_parsing.c:316:9:call_figuur	88	static
