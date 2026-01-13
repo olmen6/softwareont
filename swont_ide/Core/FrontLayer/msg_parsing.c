@@ -22,13 +22,14 @@ cmd_entry commands[] = {
 		{CIRKEL, call_cirkel},
 		{HERHAAL, call_herhaal},
 		{FIGUUR, call_figuur},
-		{NULL, NULL}			//einde, kon ook weglaten en checken voor \0 maar dat ging onhandig
+		{NULL, NULL}			//einde, kan ook weglaten en checken voor \0 maar dat gaat onhandig
 };
 
 /**
  * @brief functie om inkomende berichten te parsen voor de individuele commando's. run "argList args;" voor het aanmaken van de struct.
- * @param msg, de array om door te parsen
+ * @param msg, pointer naar de array om door te parsen
  * @param args, &adres van de struct waar de argumenten in moeten komen
+ * @return errorcode in geval van errors of '1' wanneer niets fout gaat
  */
 uint8_t parse_msg(char *msg, argList *args)
 {
@@ -69,7 +70,8 @@ uint8_t parse_msg(char *msg, argList *args)
 
 /*
  * @brief functie om het gesplitste bericht te analyseren voor welk commando is aangevraagd. en roept vervolgens de bijbehorende functie aan
- * @param
+ * @param args, &adres van de struct waar de commando's en argumenten in zitten na de parse_msg(...) functie
+ * @return errorcode in geval van errors of '1' wanneer niets fout gaat
  */
 uint8_t process_msg(const argList *args)
 {
@@ -114,6 +116,7 @@ uint8_t process_msg(const argList *args)
 /**
  * @brief functie om de logic layer aan te sturen (tekst)
  * @param struct met pointers naar de argumenten in het ontvangen bericht (ln. 55 van msg_parser.h)
+ * @return errorcode in geval van errors of de aanroep van de logic functie
  */
 uint8_t call_tekst(argList *args)
 {
@@ -153,6 +156,7 @@ uint8_t call_tekst(argList *args)
 /**
  * @brief functie om de logic layer aan te sturen (clearscherm)
  * @param struct met pointers naar de argumenten in het ontvangen bericht (ln. 55 van msg_parser.h)
+ * @return errorcode in geval van errors of de aanroep van de logic functie
  */
 uint8_t call_fill(argList *args)
 {
@@ -177,6 +181,7 @@ uint8_t call_fill(argList *args)
 /**
  * @brief functie om de logic layer aan te sturen (lijn)
  * @param struct met pointers naar de argumenten in het ontvangen bericht (ln. 55 van msg_parser.h)
+ * @return errorcode in geval van errors of de aanroep van de logic functie
  */
 uint8_t call_lijn(argList *args)
 {
@@ -204,6 +209,7 @@ uint8_t call_lijn(argList *args)
 /**
  * @brief functie om de logic layer aan te sturen (rechthoek)
  * @param struct met pointers naar de argumenten in het ontvangen bericht (ln. 55 van msg_parser.h)
+ * @return errorcode in geval van errors of de aanroep van de logic functie
  */
 uint8_t call_rechthoek(argList *args)
 {
@@ -235,6 +241,7 @@ uint8_t call_rechthoek(argList *args)
 /**
  * @brief functie om de logic layer aan te sturen (bitmap)
  * @param struct met pointers naar de argumenten in het ontvangen bericht (ln. 55 van msg_parser.h)
+ * @return errorcode in geval van errors of de aanroep van de logic functie
  */
 uint8_t call_bitmap(argList *args)
 {
@@ -259,6 +266,7 @@ uint8_t call_bitmap(argList *args)
 /**
  * @brief functie om de logic layer aan te sturen (wacht)
  * @param struct met pointers naar de argumenten in het ontvangen bericht (ln. 55 van msg_parser.h)
+ * @return errorcode dat deze functie niet is geïmplementeerd
  */
 uint8_t call_wacht(argList *args)
 {
@@ -269,6 +277,7 @@ uint8_t call_wacht(argList *args)
 /**
  * @brief functie om de logic layer aan te sturen (herhaal)
  * @param struct met pointers naar de argumenten in het ontvangen bericht (ln. 55 van msg_parser.h)
+ * @return errorcode dat deze functie niet is geïmplementeerd
  */
 uint8_t call_herhaal(argList *args)
 {
@@ -279,6 +288,7 @@ uint8_t call_herhaal(argList *args)
 /**
  * @brief functie om de logic layer aan te sturen (cirkel)
  * @param struct met pointers naar de argumenten in het ontvangen bericht (ln. 55 van msg_parser.h)
+ * @return errorcode in geval van errors of de aanroep van de logic functie
  */
 uint8_t call_cirkel(argList *args)
 {
@@ -308,6 +318,7 @@ uint8_t call_cirkel(argList *args)
 /**
  * @brief functie om de logic layer aan te sturen (figuur)
  * @param struct met pointers naar de argumenten in het ontvangen bericht (ln. 55 van msg_parser.h)
+ * @return errorcode in geval van errors of de aanroep van de logic functie
  */
 uint8_t call_figuur(argList *args)
 {
