@@ -29,6 +29,15 @@
 #define MAX_ARG_COUNT 12
 #define MAX_TOKEN_LEN 256  // Max length per token
 
+#define TOKEN ","
+#define TXTARGNUM 8
+#define FILLARGNUM 2
+#define LNARGNUM 7
+#define RECARGNUM 7
+#define BMPARGNUM 4
+#define CIRKARGNUM 5
+#define FIGARGNUM 12
+
 //typedefs (moet voor prototypes!)
 /**************************************************************************************************************************************/
 
