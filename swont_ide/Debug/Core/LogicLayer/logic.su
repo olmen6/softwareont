@@ -1,7 +1,7 @@
-../Core/LogicLayer/logic.c:17:16:color_from_string	16	static
-../Core/LogicLayer/logic.c:38:9:logicAPICallfill	40	static
-../Core/LogicLayer/logic.c:52:9:logicAPICallLijn	80	static
-../Core/LogicLayer/logic.c:69:9:logicAPICallRechthoek	80	static
-../Core/LogicLayer/logic.c:83:9:logicAPICallcirkel	56	static
-../Core/LogicLayer/logic.c:96:9:logicAPICallbitmap	32	static
-../Core/LogicLayer/logic.c:108:9:logicAPICalltxt	72	static
+../Core/LogicLayer/logic.c:29:16:color_from_string	16	static
+../Core/LogicLayer/logic.c:58:9:logicAPICallfill	40	static
+../Core/LogicLayer/logic.c:84:9:logicAPICallLijn	88	static
+../Core/LogicLayer/logic.c:120:9:logicAPICallRechthoek	104	static
+../Core/LogicLayer/logic.c:159:9:logicAPICallcirkel	88	static
+../Core/LogicLayer/logic.c:198:9:logicAPICallbitmap	48	static
+../Core/LogicLayer/logic.c:232:9:logicAPICalltxt	128	static
