@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]],
-  ['memmanage_5fhandler_1',['MemManage_Handler',['../stm32f4xx__it_8h.html#a3150f74512510287a942624aa9b44cc5',1,'MemManage_Handler(void):&#160;stm32f4xx_it.c'],['../stm32f4xx__it_8c.html#a3150f74512510287a942624aa9b44cc5',1,'MemManage_Handler(void):&#160;stm32f4xx_it.c']]]
+  ['error_5fhandler_0',['Error_Handler',['../main_8h.html#a1730ffe1e560465665eb47d9264826f9',1,'Error_Handler(void):&#160;main.c'],['../main_8c.html#a1730ffe1e560465665eb47d9264826f9',1,'Error_Handler(void):&#160;main.c']]],
+  ['error_5freport_1',['Error_Report',['../error_8h.html#a770d231c828a5d2f8a23febb773f2e0a',1,'Error_Report(const Error_t *err):&#160;error.c'],['../error_8c.html#a770d231c828a5d2f8a23febb773f2e0a',1,'Error_Report(const Error_t *err):&#160;error.c']]],
+  ['errortostr_2',['errorToStr',['../error_8h.html#a59f28e32fd77b4af48ccd910322cd32f',1,'errorToStr(ErrorCode_t e):&#160;error.c'],['../error_8c.html#a59f28e32fd77b4af48ccd910322cd32f',1,'errorToStr(ErrorCode_t e):&#160;error.c']]]
 ];

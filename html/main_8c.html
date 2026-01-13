@@ -109,19 +109,18 @@ $(function(){initNavTree('main_8c.html',''); initResizable(true); });
 <p>: Main program body  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
-<code>#include &quot;dma.h&quot;</code><br />
-<code>#include &quot;tim.h&quot;</code><br />
-<code>#include &quot;usart.h&quot;</code><br />
-<code>#include &quot;gpio.h&quot;</code><br />
-<code>#include &quot;msg_parsing.h&quot;</code><br />
-<code>#include &quot;error.h&quot;</code><br />
-<code>#include &quot;api_draw_functies.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="dma_8h_source.html">dma.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="tim_8h_source.html">tim.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="usart_8h_source.html">usart.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gpio_8h_source.html">gpio.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="msg__parsing_8h_source.html">msg_parsing.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="error_8h_source.html">error.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="api__draw__functies_8h_source.html">api_draw_functies.h</a>&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a6bac225908d39cd36055eb038aa79c0b" id="r_a6bac225908d39cd36055eb038aa79c0b"><td class="memItemLeft" align="right" valign="top"><a id="a6bac225908d39cd36055eb038aa79c0b" name="a6bac225908d39cd36055eb038aa79c0b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>USART_PRINTF</b>&#160;&#160;&#160;int fputc(int ch, FILE *f)</td></tr>
+<tr class="memitem:a6bac225908d39cd36055eb038aa79c0b" id="r_a6bac225908d39cd36055eb038aa79c0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bac225908d39cd36055eb038aa79c0b">USART_PRINTF</a>&#160;&#160;&#160;int fputc(int <a class="el" href="#a0523c05685d59544dca911cb6a3db77d">ch</a>, FILE *f)</td></tr>
 <tr class="separator:a6bac225908d39cd36055eb038aa79c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -138,25 +137,19 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a0d0c46791672d829075326a134858672" id="r_a0d0c46791672d829075326a134858672"><td class="memItemLeft" align="right" valign="top"><a id="a0d0c46791672d829075326a134858672" name="a0d0c46791672d829075326a134858672"></a>
-<a class="el" href="structinput__vars.html">input_vars</a>&#160;</td><td class="memItemRight" valign="bottom"><b>input</b></td></tr>
+<tr class="memitem:a0d0c46791672d829075326a134858672" id="r_a0d0c46791672d829075326a134858672"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structinput__vars.html">input_vars</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d0c46791672d829075326a134858672">input</a></td></tr>
 <tr class="separator:a0d0c46791672d829075326a134858672"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a945cd2261a2991d2fd051aa21bbd46a0" id="r_a945cd2261a2991d2fd051aa21bbd46a0"><td class="memItemLeft" align="right" valign="top"><a id="a945cd2261a2991d2fd051aa21bbd46a0" name="a945cd2261a2991d2fd051aa21bbd46a0"></a>
-volatile char&#160;</td><td class="memItemRight" valign="bottom"><b>container</b> [1024]</td></tr>
+<tr class="memitem:a945cd2261a2991d2fd051aa21bbd46a0" id="r_a945cd2261a2991d2fd051aa21bbd46a0"><td class="memItemLeft" align="right" valign="top">volatile char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a945cd2261a2991d2fd051aa21bbd46a0">container</a> [1024]</td></tr>
 <tr class="separator:a945cd2261a2991d2fd051aa21bbd46a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed71a558a0fc065e11b9c3c8fc2e2ad6" id="r_aed71a558a0fc065e11b9c3c8fc2e2ad6"><td class="memItemLeft" align="right" valign="top"><a id="aed71a558a0fc065e11b9c3c8fc2e2ad6" name="aed71a558a0fc065e11b9c3c8fc2e2ad6"></a>
-volatile int&#160;</td><td class="memItemRight" valign="bottom"><b>temp</b></td></tr>
+<tr class="memitem:aed71a558a0fc065e11b9c3c8fc2e2ad6" id="r_aed71a558a0fc065e11b9c3c8fc2e2ad6"><td class="memItemLeft" align="right" valign="top">volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed71a558a0fc065e11b9c3c8fc2e2ad6">temp</a></td></tr>
 <tr class="separator:aed71a558a0fc065e11b9c3c8fc2e2ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebcfb1663ad4c68bf6386e05f4d990d3" id="r_aebcfb1663ad4c68bf6386e05f4d990d3"><td class="memItemLeft" align="right" valign="top"><a id="aebcfb1663ad4c68bf6386e05f4d990d3" name="aebcfb1663ad4c68bf6386e05f4d990d3"></a>
-volatile int&#160;</td><td class="memItemRight" valign="bottom"><b>key</b></td></tr>
+<tr class="memitem:aebcfb1663ad4c68bf6386e05f4d990d3" id="r_aebcfb1663ad4c68bf6386e05f4d990d3"><td class="memItemLeft" align="right" valign="top">volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebcfb1663ad4c68bf6386e05f4d990d3">key</a></td></tr>
 <tr class="separator:aebcfb1663ad4c68bf6386e05f4d990d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07b318db6060c6f5ffc20f371167e88b" id="r_a07b318db6060c6f5ffc20f371167e88b"><td class="memItemLeft" align="right" valign="top"><a id="a07b318db6060c6f5ffc20f371167e88b" name="a07b318db6060c6f5ffc20f371167e88b"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>printing_done_flag</b> = TRUE</td></tr>
+<tr class="memitem:a07b318db6060c6f5ffc20f371167e88b" id="r_a07b318db6060c6f5ffc20f371167e88b"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07b318db6060c6f5ffc20f371167e88b">printing_done_flag</a> = <a class="el" href="main_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></td></tr>
 <tr class="separator:a07b318db6060c6f5ffc20f371167e88b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a7dab423912a84e2df34e6b03af3553" id="r_a1a7dab423912a84e2df34e6b03af3553"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a7dab423912a84e2df34e6b03af3553">USART_PRINTF</a></td></tr>
 <tr class="separator:a1a7dab423912a84e2df34e6b03af3553"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0523c05685d59544dca911cb6a3db77d" id="r_a0523c05685d59544dca911cb6a3db77d"><td class="memItemLeft" align="right" valign="top"><a id="a0523c05685d59544dca911cb6a3db77d" name="a0523c05685d59544dca911cb6a3db77d"></a>
-return&#160;</td><td class="memItemRight" valign="bottom"><b>ch</b></td></tr>
+<tr class="memitem:a0523c05685d59544dca911cb6a3db77d" id="r_a0523c05685d59544dca911cb6a3db77d"><td class="memItemLeft" align="right" valign="top">return&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0523c05685d59544dca911cb6a3db77d">ch</a></td></tr>
 <tr class="separator:a0523c05685d59544dca911cb6a3db77d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -164,7 +157,22 @@ return&#160;</td><td class="memItemRight" valign="bottom"><b>ch</b></td></tr>
 <dl class="section attention"><dt>Attention</dt><dd></dd></dl>
 <h2><center>&copy; Copyright (c) 2020 STMicroelectronics. All rights reserved.</center></h2>
 <p>This software component is licensed by ST under BSD 3-Clause license, the "License"; You may not use this file except in compliance with the License. You may obtain a copy of the License at: opensource.org/licenses/BSD-3-Clause </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a6bac225908d39cd36055eb038aa79c0b" name="a6bac225908d39cd36055eb038aa79c0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bac225908d39cd36055eb038aa79c0b">&#9670;&#160;</a></span>USART_PRINTF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USART_PRINTF&#160;&#160;&#160;int fputc(int <a class="el" href="#a0523c05685d59544dca911cb6a3db77d">ch</a>, FILE *f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a1730ffe1e560465665eb47d9264826f9" name="a1730ffe1e560465665eb47d9264826f9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1730ffe1e560465665eb47d9264826f9">&#9670;&#160;</a></span>Error_Handler()</h2>
 
@@ -244,6 +252,90 @@ return&#160;</td><td class="memItemRight" valign="bottom"><b>ch</b></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a0523c05685d59544dca911cb6a3db77d" name="a0523c05685d59544dca911cb6a3db77d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0523c05685d59544dca911cb6a3db77d">&#9670;&#160;</a></span>ch</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">return ch</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a945cd2261a2991d2fd051aa21bbd46a0" name="a945cd2261a2991d2fd051aa21bbd46a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a945cd2261a2991d2fd051aa21bbd46a0">&#9670;&#160;</a></span>container</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile char container[1024]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0d0c46791672d829075326a134858672" name="a0d0c46791672d829075326a134858672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d0c46791672d829075326a134858672">&#9670;&#160;</a></span>input</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structinput__vars.html">input_vars</a> input</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aebcfb1663ad4c68bf6386e05f4d990d3" name="aebcfb1663ad4c68bf6386e05f4d990d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebcfb1663ad4c68bf6386e05f4d990d3">&#9670;&#160;</a></span>key</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile int key</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a07b318db6060c6f5ffc20f371167e88b" name="a07b318db6060c6f5ffc20f371167e88b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07b318db6060c6f5ffc20f371167e88b">&#9670;&#160;</a></span>printing_done_flag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char printing_done_flag = <a class="el" href="main_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aed71a558a0fc065e11b9c3c8fc2e2ad6" name="aed71a558a0fc065e11b9c3c8fc2e2ad6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed71a558a0fc065e11b9c3c8fc2e2ad6">&#9670;&#160;</a></span>temp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile int temp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a1a7dab423912a84e2df34e6b03af3553" name="a1a7dab423912a84e2df34e6b03af3553"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1a7dab423912a84e2df34e6b03af3553">&#9670;&#160;</a></span>USART_PRINTF</h2>
 
@@ -256,7 +348,9 @@ return&#160;</td><td class="memItemRight" valign="bottom"><b>ch</b></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">    HAL_UART_Transmit(&amp;huart2, (uint8_t *)&amp;ch, 1, 0xFFFF)</div>
+<div class="line">    HAL_UART_Transmit(&amp;<a class="code hl_variable" href="usart_8h.html#aa9479c261d65eecedd3d9582f7f0f89c">huart2</a>, (uint8_t *)&amp;<a class="code hl_variable" href="#a0523c05685d59544dca911cb6a3db77d">ch</a>, 1, 0xFFFF)</div>
+<div class="ttc" id="amain_8c_html_a0523c05685d59544dca911cb6a3db77d"><div class="ttname"><a href="#a0523c05685d59544dca911cb6a3db77d">ch</a></div><div class="ttdeci">return ch</div><div class="ttdef"><b>Definition</b> main.c:210</div></div>
+<div class="ttc" id="ausart_8h_html_aa9479c261d65eecedd3d9582f7f0f89c"><div class="ttname"><a href="usart_8h.html#aa9479c261d65eecedd3d9582f7f0f89c">huart2</a></div><div class="ttdeci">UART_HandleTypeDef huart2</div><div class="ttdef"><b>Definition</b> usart.c:28</div></div>
 </div><!-- fragment -->
 </div>
 </div>

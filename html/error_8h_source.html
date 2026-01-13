@@ -101,52 +101,75 @@ $(function(){initNavTree('error_8h_source.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">error.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* Centrale foutafhandelingsmodule - error.h */</span></div>
+<a href="error_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* Centrale foutafhandelingsmodule - error.h */</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#ifndef ERROR_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define ERROR_H</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    ERR_OK = 0,</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    ERR_PARAM,</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    ERR_TIMEOUT,</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    ERR_HW,</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    ERR_STATE,</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    ERR_UNKNOWN</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>} ErrorCode_t;</div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="error_8h.html#a905255056c349318139d94aa4523d516">    7</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="error_8h.html#a905255056c349318139d94aa4523d516aa26c163b80b1f6786ca81dadc14b00fb">    8</a></span>    <a class="code hl_enumvalue" href="error_8h.html#a905255056c349318139d94aa4523d516aa26c163b80b1f6786ca81dadc14b00fb">ERR_OK</a> = 0,</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="error_8h.html#a905255056c349318139d94aa4523d516af8eaf8c0c5dc370583554daea40b3fea">    9</a></span>    <a class="code hl_enumvalue" href="error_8h.html#a905255056c349318139d94aa4523d516af8eaf8c0c5dc370583554daea40b3fea">ERR_PARAM</a>,</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="error_8h.html#a905255056c349318139d94aa4523d516ac568baeb6407ef5e2630084ccbc34be8">   10</a></span>    <a class="code hl_enumvalue" href="error_8h.html#a905255056c349318139d94aa4523d516ac568baeb6407ef5e2630084ccbc34be8">ERR_TIMEOUT</a>,</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="error_8h.html#a905255056c349318139d94aa4523d516acadcb0ee7184eaab1a9820024f119a4c">   11</a></span>    <a class="code hl_enumvalue" href="error_8h.html#a905255056c349318139d94aa4523d516acadcb0ee7184eaab1a9820024f119a4c">ERR_HW</a>,</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="error_8h.html#a905255056c349318139d94aa4523d516a3fb2e7a687f1b5ee064754309b29932c">   12</a></span>    <a class="code hl_enumvalue" href="error_8h.html#a905255056c349318139d94aa4523d516a3fb2e7a687f1b5ee064754309b29932c">ERR_STATE</a>,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_enumvalue" href="error_8h.html#a905255056c349318139d94aa4523d516a5c708decdcbd7d8c9fddd8d9e75828a1">ERR_UNKNOWN</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="error_8h.html#a905255056c349318139d94aa4523d516a5c708decdcbd7d8c9fddd8d9e75828a1">   14</a></span>} <a class="code hl_enumeration" href="error_8h.html#a905255056c349318139d94aa4523d516">ErrorCode_t</a>;</div>
+</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    LAYER_HW = 0,</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    LAYER_MIDDLE,</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    LAYER_APP</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>} ErrorLayer_t;</div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="error_8h.html#a52a9398757f99a3ce93be1c01c7569a3">   16</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="error_8h.html#a52a9398757f99a3ce93be1c01c7569a3a71d4d96114bd1aac53a58a7bcb0e69fe">   17</a></span>    <a class="code hl_enumvalue" href="error_8h.html#a52a9398757f99a3ce93be1c01c7569a3a71d4d96114bd1aac53a58a7bcb0e69fe">LAYER_HW</a> = 0,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="error_8h.html#a52a9398757f99a3ce93be1c01c7569a3a32a47f5f2124910d7b9f4915196889b8">   18</a></span>    <a class="code hl_enumvalue" href="error_8h.html#a52a9398757f99a3ce93be1c01c7569a3a32a47f5f2124910d7b9f4915196889b8">LAYER_MIDDLE</a>,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_enumvalue" href="error_8h.html#a52a9398757f99a3ce93be1c01c7569a3a2b8275bc607f4b9935c1a3e09f3105f1">LAYER_APP</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="error_8h.html#a52a9398757f99a3ce93be1c01c7569a3a2b8275bc607f4b9935c1a3e09f3105f1">   20</a></span>} <a class="code hl_enumeration" href="error_8h.html#a52a9398757f99a3ce93be1c01c7569a3">ErrorLayer_t</a>;</div>
+</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_error__t.html">   22</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    ErrorLayer_t layer;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    ErrorCode_t  code;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>  *module;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>  *msg;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_error__t.html#a083dcbdcc94fef13095c22c113eb781d">   23</a></span>    <a class="code hl_enumeration" href="error_8h.html#a52a9398757f99a3ce93be1c01c7569a3">ErrorLayer_t</a> <a class="code hl_variable" href="struct_error__t.html#a083dcbdcc94fef13095c22c113eb781d">layer</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct_error__t.html#ae6bfe9ba61bd3704c58381ca8730ed17">   24</a></span>    <a class="code hl_enumeration" href="error_8h.html#a905255056c349318139d94aa4523d516">ErrorCode_t</a>  <a class="code hl_variable" href="struct_error__t.html#ae6bfe9ba61bd3704c58381ca8730ed17">code</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="struct_error__t.html#a885ecdfcb963f1d1a7ba3144e9b6c8f8">   25</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span>  *<a class="code hl_variable" href="struct_error__t.html#a885ecdfcb963f1d1a7ba3144e9b6c8f8">module</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct_error__t.html#a2c3cb87d009c003069b9a90f020f8a9f">   26</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span>  *<a class="code hl_variable" href="struct_error__t.html#a2c3cb87d009c003069b9a90f020f8a9f">msg</a>;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>} <a class="code hl_struct" href="struct_error__t.html">Error_t</a>;</div>
 </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keywordtype">void</span> Error_Report(<span class="keyword">const</span> <a class="code hl_struct" href="struct_error__t.html">Error_t</a> *err);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keywordtype">void</span> <a class="code hl_function" href="error_8h.html#a770d231c828a5d2f8a23febb773f2e0a">Error_Report</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_error__t.html">Error_t</a> *err);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">const</span> <span class="keywordtype">char</span> *layerToStr(ErrorLayer_t l);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">const</span> <span class="keywordtype">char</span> *errorToStr(ErrorCode_t e);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="error_8h.html#a5d97802e1238aecc91cff9c0cfa3ae02">layerToStr</a>(<a class="code hl_enumeration" href="error_8h.html#a52a9398757f99a3ce93be1c01c7569a3">ErrorLayer_t</a> l);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="error_8h.html#a59f28e32fd77b4af48ccd910322cd32f">errorToStr</a>(<a class="code hl_enumeration" href="error_8h.html#a905255056c349318139d94aa4523d516">ErrorCode_t</a> e);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">/* Map HAL status codes (use int to avoid including HAL headers here) */</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>ErrorCode_t HAL_StatusToErrorCode(<span class="keywordtype">int</span> status);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><a class="code hl_enumeration" href="error_8h.html#a905255056c349318139d94aa4523d516">ErrorCode_t</a> <a class="code hl_function" href="error_8h.html#acb670c4a201b3f56aa9478f112d42eaa">HAL_StatusToErrorCode</a>(<span class="keywordtype">int</span> status);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#endif </span><span class="comment">// ERROR_H</span></div>
+<div class="ttc" id="aerror_8h_html_a52a9398757f99a3ce93be1c01c7569a3"><div class="ttname"><a href="error_8h.html#a52a9398757f99a3ce93be1c01c7569a3">ErrorLayer_t</a></div><div class="ttdeci">ErrorLayer_t</div><div class="ttdef"><b>Definition</b> error.h:16</div></div>
+<div class="ttc" id="aerror_8h_html_a52a9398757f99a3ce93be1c01c7569a3a2b8275bc607f4b9935c1a3e09f3105f1"><div class="ttname"><a href="error_8h.html#a52a9398757f99a3ce93be1c01c7569a3a2b8275bc607f4b9935c1a3e09f3105f1">LAYER_APP</a></div><div class="ttdeci">@ LAYER_APP</div><div class="ttdef"><b>Definition</b> error.h:19</div></div>
+<div class="ttc" id="aerror_8h_html_a52a9398757f99a3ce93be1c01c7569a3a32a47f5f2124910d7b9f4915196889b8"><div class="ttname"><a href="error_8h.html#a52a9398757f99a3ce93be1c01c7569a3a32a47f5f2124910d7b9f4915196889b8">LAYER_MIDDLE</a></div><div class="ttdeci">@ LAYER_MIDDLE</div><div class="ttdef"><b>Definition</b> error.h:18</div></div>
+<div class="ttc" id="aerror_8h_html_a52a9398757f99a3ce93be1c01c7569a3a71d4d96114bd1aac53a58a7bcb0e69fe"><div class="ttname"><a href="error_8h.html#a52a9398757f99a3ce93be1c01c7569a3a71d4d96114bd1aac53a58a7bcb0e69fe">LAYER_HW</a></div><div class="ttdeci">@ LAYER_HW</div><div class="ttdef"><b>Definition</b> error.h:17</div></div>
+<div class="ttc" id="aerror_8h_html_a59f28e32fd77b4af48ccd910322cd32f"><div class="ttname"><a href="error_8h.html#a59f28e32fd77b4af48ccd910322cd32f">errorToStr</a></div><div class="ttdeci">const char * errorToStr(ErrorCode_t e)</div><div class="ttdoc">Converteert ErrorCode_t enum naar string representatie.</div><div class="ttdef"><b>Definition</b> error.c:47</div></div>
+<div class="ttc" id="aerror_8h_html_a5d97802e1238aecc91cff9c0cfa3ae02"><div class="ttname"><a href="error_8h.html#a5d97802e1238aecc91cff9c0cfa3ae02">layerToStr</a></div><div class="ttdeci">const char * layerToStr(ErrorLayer_t l)</div><div class="ttdoc">Converteert ErrorLayer_t enum naar string representatie.</div><div class="ttdef"><b>Definition</b> error.c:32</div></div>
+<div class="ttc" id="aerror_8h_html_a770d231c828a5d2f8a23febb773f2e0a"><div class="ttname"><a href="error_8h.html#a770d231c828a5d2f8a23febb773f2e0a">Error_Report</a></div><div class="ttdeci">void Error_Report(const Error_t *err)</div><div class="ttdoc">Rapporteert fout via UART in gestandaardiseerd formaat.</div><div class="ttdef"><b>Definition</b> error.c:83</div></div>
+<div class="ttc" id="aerror_8h_html_a905255056c349318139d94aa4523d516"><div class="ttname"><a href="error_8h.html#a905255056c349318139d94aa4523d516">ErrorCode_t</a></div><div class="ttdeci">ErrorCode_t</div><div class="ttdef"><b>Definition</b> error.h:7</div></div>
+<div class="ttc" id="aerror_8h_html_a905255056c349318139d94aa4523d516a3fb2e7a687f1b5ee064754309b29932c"><div class="ttname"><a href="error_8h.html#a905255056c349318139d94aa4523d516a3fb2e7a687f1b5ee064754309b29932c">ERR_STATE</a></div><div class="ttdeci">@ ERR_STATE</div><div class="ttdef"><b>Definition</b> error.h:12</div></div>
+<div class="ttc" id="aerror_8h_html_a905255056c349318139d94aa4523d516a5c708decdcbd7d8c9fddd8d9e75828a1"><div class="ttname"><a href="error_8h.html#a905255056c349318139d94aa4523d516a5c708decdcbd7d8c9fddd8d9e75828a1">ERR_UNKNOWN</a></div><div class="ttdeci">@ ERR_UNKNOWN</div><div class="ttdef"><b>Definition</b> error.h:13</div></div>
+<div class="ttc" id="aerror_8h_html_a905255056c349318139d94aa4523d516aa26c163b80b1f6786ca81dadc14b00fb"><div class="ttname"><a href="error_8h.html#a905255056c349318139d94aa4523d516aa26c163b80b1f6786ca81dadc14b00fb">ERR_OK</a></div><div class="ttdeci">@ ERR_OK</div><div class="ttdef"><b>Definition</b> error.h:8</div></div>
+<div class="ttc" id="aerror_8h_html_a905255056c349318139d94aa4523d516ac568baeb6407ef5e2630084ccbc34be8"><div class="ttname"><a href="error_8h.html#a905255056c349318139d94aa4523d516ac568baeb6407ef5e2630084ccbc34be8">ERR_TIMEOUT</a></div><div class="ttdeci">@ ERR_TIMEOUT</div><div class="ttdef"><b>Definition</b> error.h:10</div></div>
+<div class="ttc" id="aerror_8h_html_a905255056c349318139d94aa4523d516acadcb0ee7184eaab1a9820024f119a4c"><div class="ttname"><a href="error_8h.html#a905255056c349318139d94aa4523d516acadcb0ee7184eaab1a9820024f119a4c">ERR_HW</a></div><div class="ttdeci">@ ERR_HW</div><div class="ttdef"><b>Definition</b> error.h:11</div></div>
+<div class="ttc" id="aerror_8h_html_a905255056c349318139d94aa4523d516af8eaf8c0c5dc370583554daea40b3fea"><div class="ttname"><a href="error_8h.html#a905255056c349318139d94aa4523d516af8eaf8c0c5dc370583554daea40b3fea">ERR_PARAM</a></div><div class="ttdeci">@ ERR_PARAM</div><div class="ttdef"><b>Definition</b> error.h:9</div></div>
+<div class="ttc" id="aerror_8h_html_acb670c4a201b3f56aa9478f112d42eaa"><div class="ttname"><a href="error_8h.html#acb670c4a201b3f56aa9478f112d42eaa">HAL_StatusToErrorCode</a></div><div class="ttdeci">ErrorCode_t HAL_StatusToErrorCode(int status)</div><div class="ttdoc">Converteert HAL status codes naar ErrorCode_t.</div><div class="ttdef"><b>Definition</b> error.c:106</div></div>
 <div class="ttc" id="astruct_error__t_html"><div class="ttname"><a href="struct_error__t.html">Error_t</a></div><div class="ttdef"><b>Definition</b> error.h:22</div></div>
+<div class="ttc" id="astruct_error__t_html_a083dcbdcc94fef13095c22c113eb781d"><div class="ttname"><a href="struct_error__t.html#a083dcbdcc94fef13095c22c113eb781d">Error_t::layer</a></div><div class="ttdeci">ErrorLayer_t layer</div><div class="ttdef"><b>Definition</b> error.h:23</div></div>
+<div class="ttc" id="astruct_error__t_html_a2c3cb87d009c003069b9a90f020f8a9f"><div class="ttname"><a href="struct_error__t.html#a2c3cb87d009c003069b9a90f020f8a9f">Error_t::msg</a></div><div class="ttdeci">const char * msg</div><div class="ttdef"><b>Definition</b> error.h:26</div></div>
+<div class="ttc" id="astruct_error__t_html_a885ecdfcb963f1d1a7ba3144e9b6c8f8"><div class="ttname"><a href="struct_error__t.html#a885ecdfcb963f1d1a7ba3144e9b6c8f8">Error_t::module</a></div><div class="ttdeci">const char * module</div><div class="ttdef"><b>Definition</b> error.h:25</div></div>
+<div class="ttc" id="astruct_error__t_html_ae6bfe9ba61bd3704c58381ca8730ed17"><div class="ttname"><a href="struct_error__t.html#ae6bfe9ba61bd3704c58381ca8730ed17">Error_t::code</a></div><div class="ttdeci">ErrorCode_t code</div><div class="ttdef"><b>Definition</b> error.h:24</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li><li class="navelem"><b>error.h</b></li>
+    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li><li class="navelem"><a class="el" href="error_8h.html">error.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
