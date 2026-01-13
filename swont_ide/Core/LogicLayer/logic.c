@@ -16,6 +16,8 @@
 
 static uint8_t color_from_string(const char *color)
 {
+	while (*color == ' ')
+	    	color++;
     if (color == NULL) return VGA_COL_BLACK;
     // If numeric string, use atoi
     if (color[0] >= '0' && color[0] <= '9'){
