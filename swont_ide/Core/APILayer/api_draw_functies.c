@@ -234,7 +234,11 @@ int API_draw_text(int x_lup,int y_lup,int color,const char*text,const char*fontn
 		printing_done_flag = TRUE;
 		return 0;
 	}
-
+	// Strip leading spaces
+	while (*fontstyle == ' ')
+    	fontstyle++;
+	while (*fontname == ' ')
+    	fontname++;
 	while(*text)
 	{
 		
@@ -247,7 +251,7 @@ int API_draw_text(int x_lup,int y_lup,int color,const char*text,const char*fontn
 	        continue;  // Skip invalid characters
 	    }
 
-	    for (int row = 0; row < 8; row++)
+	    for (int row = 0; row < charwidth; row++)
 	    {	
 	    	unsigned char rowdata;
 	    	if(strcmp(fontname, "arial") == 0)				//is de fontname arial?
@@ -256,13 +260,13 @@ int API_draw_text(int x_lup,int y_lup,int color,const char*text,const char*fontn
 	        	rowdata=font2[index][row];	
 	        //else return 0; //invalide fontnaam evt error code moet je wel if,else, return uncommenten____________________________
 	        unsigned char b = rowdata;
-	        for (int i = 0; i < 8; i++)  // Changed: iterate left-to-right (0 to 7 instead of 7 to 0)
+	        for (int i = 0; i < charwidth; i++)  // Changed: iterate left-to-right (0 to 7 instead of 7 to 0)
 	    	{
 	        	//printf("%d ", (b >> i) & 1);
 	        if((b>>i)&1)
 	        {
 	        	int a;
-	        	if((row<4)&(strcmp(fontstyle, "cursief") == 0))
+	        	if((row<(charwidth/2))&(strcmp(fontstyle, "cursief") == 0))
 	        		a=1;
 	        	else
 	        		a=0;
@@ -273,7 +277,7 @@ int API_draw_text(int x_lup,int y_lup,int color,const char*text,const char*fontn
 	    				UB_VGA_SetPixel(i+x_lup+1,row+y_lup,color);  // Changed: i instead of 7-i
 	    		}
 	    		else //grote text?
-	    			//if(fontsiz e==2)
+	    			//if(fontsize==2)
 	    			{
 	    				UB_VGA_SetPixel(i*fontsize+x_lup+(a*2),(row*fontsize)+y_lup,color);//maak een dikke pixel  // Changed: i*fontsize instead of 15-i*fontsize
 	    				UB_VGA_SetPixel(i*fontsize+x_lup+1+(a*2),(row*fontsize)+y_lup,color);  // Changed
@@ -290,9 +294,9 @@ int API_draw_text(int x_lup,int y_lup,int color,const char*text,const char*fontn
 				}
 			}
 	    }
-	    if((x_lup+= 8*fontsize)>(VGA_DISPLAY_X-8))	//gaat hij out of bounds?
-	    	y_lup+=fontsize*8;						//volgende regel
-	    x_lup= x_lup%(VGA_DISPLAY_X-8);				//zo ja? ga terug naar links
+	    if((x_lup+= charwidth*fontsize)>(VGA_DISPLAY_X-charwidth))	//gaat hij out of bounds?
+	    	y_lup+=fontsize*charwidth;						//volgende regel
+	    x_lup= x_lup%(VGA_DISPLAY_X-charwidth);				//zo ja? ga terug naar links
 	    text++;
 	}
 	printing_done_flag = TRUE;
