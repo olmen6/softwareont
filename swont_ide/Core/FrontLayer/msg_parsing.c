@@ -129,9 +129,9 @@ uint8_t call_tekst(argList *args)
 		}
 
 	//integer argumenten
-	uint8_t xp = 		atoi(args->tokens[1]);
-	uint8_t yp = 		atoi(args->tokens[2]);
-	uint8_t siz = 		atoi(args->tokens[6]);
+	uint16_t xp = 		atoi(args->tokens[1]);
+	uint16_t yp = 		atoi(args->tokens[2]);
+	uint16_t siz = 		atoi(args->tokens[6]);
 	//string argumenten
 	char color[10];
 	strncpy(color, 		args->tokens[3], sizeof(color) - 1);
@@ -182,10 +182,14 @@ uint8_t call_lijn(argList *args)
 {
 	//check voor argument aantal
 	if (args->count < LNARGNUM){
-			return(0); 	//error code te weinig argumenten  	//TODO
-		} else if(args->count > LNARGNUM){
-			return(0); 	//error code te veel argumenten 	//TODO
-		}
+	    Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "lijn: te weinig argumenten" };
+	    Error_Report(&err);
+	    return(0);
+	} else if(args->count > LNARGNUM){
+	    Error_t err = { .layer = LAYER_APP, .code = ERR_PARAM, .module = "MsgParser", .msg = "lijn: te veel argumenten" };
+	    Error_Report(&err);
+	    return(0);
+	}
 
 	//integer argumenten
 	uint16_t x1p = 	atoi(args->tokens[1]);
@@ -219,11 +223,11 @@ uint8_t call_rechthoek(argList *args)
 		}
 
 	//integer argumenten
-	uint8_t x1p = 		atoi(args->tokens[1]);
-	uint8_t y1p = 		atoi(args->tokens[2]);
-	uint8_t x2p = 		atoi(args->tokens[3]);
-	uint8_t y2p = 		atoi(args->tokens[4]);
-	uint8_t filled = 	atoi(args->tokens[6]);
+	uint16_t x1p = 		atoi(args->tokens[1]);
+	uint16_t y1p = 		atoi(args->tokens[2]);
+	uint16_t x2p = 		atoi(args->tokens[3]);
+	uint16_t y2p = 		atoi(args->tokens[4]);
+	uint16_t filled = 	atoi(args->tokens[6]);
 	//string argumenten
 	char color[10];
 	strncpy(color, 		args->tokens[5], sizeof(color) - 1);
@@ -249,9 +253,9 @@ uint8_t call_bitmap(argList *args)
 			return(0);
 		}
 
-	uint8_t bmpnr = atoi(args->tokens[1]);
-	uint8_t xp = 	atoi(args->tokens[2]);
-	uint8_t yp =	atoi(args->tokens[3]);
+	uint16_t bmpnr = atoi(args->tokens[1]);
+	uint16_t xp = 	atoi(args->tokens[2]);
+	uint16_t yp =	atoi(args->tokens[3]);
 
 	return logicAPICallbitmap(bmpnr, xp, yp);
 }
@@ -294,9 +298,9 @@ uint8_t call_cirkel(argList *args)
 		}
 
 	//integer argumenten
-	uint8_t xp  = atoi(args->tokens[1]);
-	uint8_t yp  = atoi(args->tokens[2]);
-	uint8_t siz = atoi(args->tokens[3]);
+	uint16_t xp  = atoi(args->tokens[1]);
+	uint16_t yp  = atoi(args->tokens[2]);
+	uint16_t siz = atoi(args->tokens[3]);
 	//strings
 	char color[10];
 	strncpy(color, args->tokens[4], sizeof(color) - 1);
@@ -323,16 +327,16 @@ uint8_t call_figuur(argList *args)
 		}
 
 	//integer argumenten
-	uint8_t xp1 = atoi(args->tokens[1]);
-	uint8_t yp1 = atoi(args->tokens[2]);
-	uint8_t xp2 = atoi(args->tokens[3]);
-	uint8_t yp2 = atoi(args->tokens[4]);
-	uint8_t xp3 = atoi(args->tokens[5]);
-	uint8_t yp3 = atoi(args->tokens[6]);
-	uint8_t xp4 = atoi(args->tokens[7]);
-	uint8_t yp4 = atoi(args->tokens[8]);
-	uint8_t xp5 = atoi(args->tokens[9]);
-	uint8_t yp5 = atoi(args->tokens[10]);
+	uint16_t xp1 = atoi(args->tokens[1]);
+	uint16_t yp1 = atoi(args->tokens[2]);
+	uint16_t xp2 = atoi(args->tokens[3]);
+	uint16_t yp2 = atoi(args->tokens[4]);
+	uint16_t xp3 = atoi(args->tokens[5]);
+	uint16_t yp3 = atoi(args->tokens[6]);
+	uint16_t xp4 = atoi(args->tokens[7]);
+	uint16_t yp4 = atoi(args->tokens[8]);
+	uint16_t xp5 = atoi(args->tokens[9]);
+	uint16_t yp5 = atoi(args->tokens[10]);
 	//string argumenten
 	char color[10];
 	strncpy(color, args->tokens[11], sizeof(color) - 1);
