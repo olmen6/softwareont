@@ -262,8 +262,10 @@ int API_draw_text(int x_lup,int y_lup,int color,const char*text,const char*fontn
 	        if((b>>i)&1)
 	        {
 	        	int a;
-	        	if(row<4){a=1;}else{a=0;}
-
+	        	if((row<4)&(strcmp(fontstyle, "cursief") == 0))
+	        		a=1;
+	        	else
+	        		a=0;
 	        	if(fontsize==1)//kleine text?
 	        	{
 	    			UB_VGA_SetPixel(i+x_lup+a,row+y_lup,color);  // Changed: i instead of 7-i
