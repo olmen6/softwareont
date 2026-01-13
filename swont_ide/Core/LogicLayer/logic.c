@@ -28,6 +28,8 @@
  */
 static uint8_t color_from_string(const char *color)
 {
+	while (*color == ' ')
+	    	color++;
     // Kleuren naam mapping
 	if (strcmp(color, "wit") == 0)     return VGA_COL_WHITE;
     if (strcmp(color, "zwart") == 0)   return VGA_COL_BLACK;
