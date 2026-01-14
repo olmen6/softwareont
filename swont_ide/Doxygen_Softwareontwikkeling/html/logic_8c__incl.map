@@ -1,0 +1,29 @@
+<map id="C:/Users/Melle/SoftOnt/softwareont/swont_ide/Core/LogicLayer/logic.c" name="C:/Users/Melle/SoftOnt/softwareont/swont_ide/Core/LogicLayer/logic.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="108,5,271,64"/>
+<area shape="rect" id="Node000002" href="$logic_8h.html" title=" " alt="" coords="5,187,65,213"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,66,110,114,56,177,52,173,106,110,156,62"/>
+<area shape="rect" id="Node000004" href="$api__draw__functies_8h.html" title=" " alt="" coords="228,112,365,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="226,62,271,100,268,104,222,66"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="159,336,223,363"/>
+<area shape="poly" id="edge15_Node000001_Node000009" title=" " alt="" coords="192,64,194,320,188,320,187,64"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="473,336,536,363"/>
+<area shape="poly" id="edge16_Node000001_Node000010" title=" " alt="" coords="272,57,321,77,371,104,418,140,438,162,455,185,472,220,486,256,502,320,497,321,481,258,467,222,450,188,434,165,414,144,368,109,319,82,270,62"/>
+<area shape="rect" id="Node000011" href="$error_8h.html" title=" " alt="" coords="60,261,152,288"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="182,66,118,248,113,246,177,64"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="71,336,135,363"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="37,214,39,248,49,287,62,307,78,324,74,327,58,310,45,289,34,249,32,214"/>
+<area shape="rect" id="Node000005" href="$stm32__ub__vga__screen_8h.html" title=" " alt="" coords="277,187,441,213"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="309,137,340,173,336,177,305,141"/>
+<area shape="poly" id="edge12_Node000004_Node000009" title=" " alt="" coords="292,140,268,188,205,323,200,321,263,186,287,138"/>
+<area shape="rect" id="Node000006" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="329,261,389,288"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="355,214,353,246,348,246,349,214"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="329,287,151,337,150,332,328,282"/>
+<area shape="poly" id="edge11_Node000006_Node000005" title=" " alt="" coords="363,261,365,229,370,229,369,261"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="247,336,364,363"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="352,290,326,325,322,322,348,287"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="389,336,449,363"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="371,287,401,322,397,326,367,290"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="331,291,235,332,233,327,329,286"/>
+<area shape="poly" id="edge10_Node000006_Node000010" title=" " alt="" coords="385,286,467,326,464,331,383,291"/>
+<area shape="poly" id="edge14_Node000011_Node000003" title=" " alt="" coords="108,289,107,320,101,320,103,288"/>
+</map>

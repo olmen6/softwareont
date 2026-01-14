@@ -1,0 +1,9 @@
+<map id="call_figuur" name="call_figuur">
+<area shape="rect" id="Node000001" title="functie om de logic layer aan te sturen (figuur)" alt="" coords="5,31,86,57"/>
+<area shape="rect" id="Node000002" href="$error_8c.html#a770d231c828a5d2f8a23febb773f2e0a" title="Rapporteert fout via UART in gestandaardiseerd formaat." alt="" coords="134,31,229,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,41,118,41,118,47,86,47"/>
+<area shape="rect" id="Node000003" href="$error_8c.html#a59f28e32fd77b4af48ccd910322cd32f" title="Converteert ErrorCode_t enum naar string representatie." alt="" coords="278,5,356,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="229,32,262,26,263,31,230,38"/>
+<area shape="rect" id="Node000004" href="$error_8c.html#a5d97802e1238aecc91cff9c0cfa3ae02" title="Converteert ErrorLayer_t enum naar string representatie." alt="" coords="277,56,357,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="230,50,262,56,261,62,229,56"/>
+</map>

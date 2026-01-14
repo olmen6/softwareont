@@ -1,0 +1,13 @@
+<map id="logicAPICallfill" name="logicAPICallfill">
+<area shape="rect" id="Node000001" title="Vult het scherm met een solide kleur." alt="" coords="5,31,112,57"/>
+<area shape="rect" id="Node000002" href="$api__draw__functies_8c.html#a995d22104d8929428d0c6aa24a78786f" title="API functie dat alle pixels op een gegeven kleur instelt." alt="" coords="160,5,258,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,32,144,27,145,32,113,38"/>
+<area shape="rect" id="Node000004" href="$error_8c.html#a770d231c828a5d2f8a23febb773f2e0a" title="Rapporteert fout via UART in gestandaardiseerd formaat." alt="" coords="161,56,256,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="113,50,146,56,145,61,112,56"/>
+<area shape="rect" id="Node000003" href="$stm32__ub__vga__screen_8c.html#a1fd52b52c87572b4bfad9637ec34e621" title=" " alt="" coords="306,5,437,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="259,16,290,16,290,21,259,21"/>
+<area shape="rect" id="Node000005" href="$error_8c.html#a59f28e32fd77b4af48ccd910322cd32f" title="Converteert ErrorCode_t enum naar string representatie." alt="" coords="332,56,411,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="257,67,317,67,317,72,257,72"/>
+<area shape="rect" id="Node000006" href="$error_8c.html#a5d97802e1238aecc91cff9c0cfa3ae02" title="Converteert ErrorLayer_t enum naar string representatie." alt="" coords="332,107,412,133"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="255,81,318,101,316,106,254,86"/>
+</map>

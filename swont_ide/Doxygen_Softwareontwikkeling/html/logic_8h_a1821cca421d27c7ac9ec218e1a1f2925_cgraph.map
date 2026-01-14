@@ -1,0 +1,14 @@
+<map id="logicAPICallRechthoek" name="logicAPICallRechthoek">
+<area shape="rect" id="Node000001" title="Tekent een rechthoek op het scherm." alt="" coords="5,56,162,83"/>
+<area shape="rect" id="Node000002" href="$api__draw__functies_8c.html#a930224439b55fa71369f5d62dfba7a38" title="API functie om een rechthoek te maken in de VGA buffer." alt="" coords="210,81,348,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,77,195,81,194,86,162,82"/>
+<area shape="rect" id="Node000003" href="$error_8c.html#a770d231c828a5d2f8a23febb773f2e0a" title="Rapporteert fout via UART in gestandaardiseerd formaat." alt="" coords="414,31,509,57"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="162,61,398,46,399,51,162,67"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="329,78,399,59,400,64,331,83"/>
+<area shape="rect" id="Node000006" href="$stm32__ub__vga__screen_8c.html#a1fd52b52c87572b4bfad9637ec34e621" title=" " alt="" coords="396,81,527,108"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="348,92,381,92,381,97,348,97"/>
+<area shape="rect" id="Node000004" href="$error_8c.html#a59f28e32fd77b4af48ccd910322cd32f" title="Converteert ErrorCode_t enum naar string representatie." alt="" coords="576,5,655,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="509,34,561,25,562,30,510,39"/>
+<area shape="rect" id="Node000005" href="$error_8c.html#a5d97802e1238aecc91cff9c0cfa3ae02" title="Converteert ErrorLayer_t enum naar string representatie." alt="" coords="575,56,656,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="510,49,561,58,560,63,509,54"/>
+</map>

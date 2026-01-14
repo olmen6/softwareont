@@ -1,0 +1,16 @@
+<map id="call_cirkel" name="call_cirkel">
+<area shape="rect" id="Node000001" title="functie om de logic layer aan te sturen (cirkel)" alt="" coords="5,81,85,108"/>
+<area shape="rect" id="Node000002" href="$error_8c.html#a770d231c828a5d2f8a23febb773f2e0a" title="Rapporteert fout via UART in gestandaardiseerd formaat." alt="" coords="316,56,411,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,89,300,72,300,77,85,94"/>
+<area shape="rect" id="Node000005" href="$logic_8c.html#ac311aec3b0373c8b047adb1423d7ecd7" title="Tekent een cirkel op het scherm." alt="" coords="133,107,257,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="85,99,118,104,117,110,85,104"/>
+<area shape="rect" id="Node000003" href="$error_8c.html#a59f28e32fd77b4af48ccd910322cd32f" title="Converteert ErrorCode_t enum naar string representatie." alt="" coords="496,5,574,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="410,53,481,32,482,37,412,58"/>
+<area shape="rect" id="Node000004" href="$error_8c.html#a5d97802e1238aecc91cff9c0cfa3ae02" title="Converteert ErrorLayer_t enum naar string representatie." alt="" coords="495,56,575,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="411,67,479,67,479,72,411,72"/>
+<area shape="poly" id="edge7_Node000005_Node000002" title=" " alt="" coords="241,103,301,85,302,90,243,109"/>
+<area shape="rect" id="Node000006" href="$api__draw__functies_8c.html#aa5074a066da892be2a162b9269f5e915" title="API functie om een cirkel in de VGA buffer te maken van een bepaalde kleur. de dikte of opvulling hie..." alt="" coords="305,107,421,133"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="257,117,290,117,290,123,257,123"/>
+<area shape="rect" id="Node000007" href="$stm32__ub__vga__screen_8c.html#a1fd52b52c87572b4bfad9637ec34e621" title=" " alt="" coords="469,107,601,133"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="422,117,454,117,454,123,422,123"/>
+</map>

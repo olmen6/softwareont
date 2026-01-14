@@ -1,0 +1,14 @@
+<map id="logicAPICallbitmap" name="logicAPICallbitmap">
+<area shape="rect" id="Node000001" title="Tekent een bitmap op het scherm." alt="" coords="5,56,138,83"/>
+<area shape="rect" id="Node000002" href="$api__draw__functies_8c.html#a196d22f276d5b3398e9c43dea9ccd259" title="API functie dat een bitmap zoal deze in de flash is opgeslagen in bitmaps.h in de VGA buffer print." alt="" coords="186,81,310,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,76,171,81,170,86,138,81"/>
+<area shape="rect" id="Node000003" href="$error_8c.html#a770d231c828a5d2f8a23febb773f2e0a" title="Rapporteert fout via UART in gestandaardiseerd formaat." alt="" coords="376,31,471,57"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="138,62,360,46,361,51,138,67"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="296,78,361,59,362,64,298,83"/>
+<area shape="rect" id="Node000006" href="$stm32__ub__vga__screen_8c.html#a1fd52b52c87572b4bfad9637ec34e621" title=" " alt="" coords="358,81,489,108"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="310,92,343,92,343,97,310,97"/>
+<area shape="rect" id="Node000004" href="$error_8c.html#a59f28e32fd77b4af48ccd910322cd32f" title="Converteert ErrorCode_t enum naar string representatie." alt="" coords="538,5,617,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="471,34,523,25,524,30,472,39"/>
+<area shape="rect" id="Node000005" href="$error_8c.html#a5d97802e1238aecc91cff9c0cfa3ae02" title="Converteert ErrorLayer_t enum naar string representatie." alt="" coords="537,56,618,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="472,49,523,58,522,63,471,54"/>
+</map>

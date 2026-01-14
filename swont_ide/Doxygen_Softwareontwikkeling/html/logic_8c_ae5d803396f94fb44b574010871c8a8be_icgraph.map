@@ -1,0 +1,5 @@
+<map id="logicAPICallbitmap" name="logicAPICallbitmap">
+<area shape="rect" id="Node000001" title="Tekent een bitmap op het scherm." alt="" coords="141,5,273,32"/>
+<area shape="rect" id="Node000002" href="$msg__parsing_8c.html#a9a00baf25b42562aa03e44c171ce31a7" title="functie om de logic layer aan te sturen (bitmap)" alt="" coords="5,5,93,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,21,93,21,93,16,125,16"/>
+</map>

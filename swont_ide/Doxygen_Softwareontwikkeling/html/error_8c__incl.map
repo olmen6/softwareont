@@ -1,0 +1,25 @@
+<map id="C:/Users/Melle/SoftOnt/softwareont/swont_ide/Core/Src/error.c" name="C:/Users/Melle/SoftOnt/softwareont/swont_ide/Core/Src/error.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="161,5,319,64"/>
+<area shape="rect" id="Node000002" href="$error_8h.html" title=" " alt="" coords="39,187,132,213"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,67,167,114,109,177,105,173,164,110,210,63"/>
+<area shape="rect" id="Node000004" href="$usart_8h.html" title=" " alt="" coords="255,112,316,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="257,63,274,97,270,99,252,66"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="94,261,211,288"/>
+<area shape="poly" id="edge13_Node000001_Node000006" title=" " alt="" coords="232,66,165,248,160,246,227,64"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="593,261,658,288"/>
+<area shape="poly" id="edge12_Node000001_Node000008" title=" " alt="" coords="288,62,594,251,591,255,285,67"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,261,70,288"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="79,215,56,250,52,247,75,212"/>
+<area shape="rect" id="Node000005" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="278,187,338,213"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="292,138,302,171,297,173,287,140"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="278,212,86,263,84,258,277,207"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="282,216,194,257,192,252,280,211"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="235,261,296,288"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="303,215,283,249,278,247,298,213"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="339,205,579,258,578,263,338,210"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="319,261,382,288"/>
+<area shape="poly" id="edge9_Node000005_Node000009" title=" " alt="" coords="318,213,338,247,334,249,313,215"/>
+<area shape="rect" id="Node000010" href="$stm32__ub__vga__screen_8h.html" title=" " alt="" coords="406,261,570,288"/>
+<area shape="poly" id="edge10_Node000005_Node000010" title=" " alt="" coords="333,211,437,253,435,258,332,216"/>
+<area shape="poly" id="edge11_Node000010_Node000005" title=" " alt="" coords="463,263,352,219,354,214,465,258"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="SystemClock_Config" name="SystemClock_Config">
+<area shape="rect" id="Node000001" title="System Clock Configuration." alt="" coords="5,31,151,57"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="199,31,300,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,41,183,41,183,47,151,47"/>
+<area shape="rect" id="Node000003" href="$error_8c.html#a770d231c828a5d2f8a23febb773f2e0a" title="Rapporteert fout via UART in gestandaardiseerd formaat." alt="" coords="348,31,443,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="301,41,332,41,332,47,301,47"/>
+<area shape="rect" id="Node000004" href="$error_8c.html#a59f28e32fd77b4af48ccd910322cd32f" title="Converteert ErrorCode_t enum naar string representatie." alt="" coords="492,5,571,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="443,32,476,26,477,31,444,38"/>
+<area shape="rect" id="Node000005" href="$error_8c.html#a5d97802e1238aecc91cff9c0cfa3ae02" title="Converteert ErrorLayer_t enum naar string representatie." alt="" coords="491,56,572,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="444,50,476,56,475,62,443,56"/>
+</map>

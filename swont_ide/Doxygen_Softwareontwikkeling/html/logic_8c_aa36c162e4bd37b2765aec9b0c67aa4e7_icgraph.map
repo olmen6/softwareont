@@ -1,0 +1,5 @@
+<map id="logicAPICallLijn" name="logicAPICallLijn">
+<area shape="rect" id="Node000001" title="Tekent een lijn op het scherm." alt="" coords="118,5,231,32"/>
+<area shape="rect" id="Node000002" href="$msg__parsing_8c.html#acbd9d4593c8e6cf342aaaa377460c375" title="functie om de logic layer aan te sturen (lijn)" alt="" coords="5,5,70,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,21,70,21,70,16,102,16"/>
+</map>
