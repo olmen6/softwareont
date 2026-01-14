@@ -1,0 +1,13 @@
+<map id="logicAPICallcirkel" name="logicAPICallcirkel">
+<area shape="rect" id="Node000001" title="Tekent een cirkel op het scherm." alt="" coords="5,31,130,57"/>
+<area shape="rect" id="Node000002" href="$api__draw__functies_8c.html#aa5074a066da892be2a162b9269f5e915" title="API functie om een cirkel in de VGA buffer te maken van een bepaalde kleur. de dikte of opvulling hie..." alt="" coords="178,5,294,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,32,162,27,163,32,130,37"/>
+<area shape="rect" id="Node000004" href="$error_8c.html#a770d231c828a5d2f8a23febb773f2e0a" title="Rapporteert fout via UART in gestandaardiseerd formaat." alt="" coords="188,56,284,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="130,51,173,57,172,63,130,56"/>
+<area shape="rect" id="Node000003" href="$stm32__ub__vga__screen_8c.html#a1fd52b52c87572b4bfad9637ec34e621" title=" " alt="" coords="342,5,473,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="294,16,326,16,326,21,294,21"/>
+<area shape="rect" id="Node000005" href="$error_8c.html#a59f28e32fd77b4af48ccd910322cd32f" title="Converteert ErrorCode_t enum naar string representatie." alt="" coords="368,56,447,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="284,67,354,67,354,72,284,72"/>
+<area shape="rect" id="Node000006" href="$error_8c.html#a5d97802e1238aecc91cff9c0cfa3ae02" title="Converteert ErrorLayer_t enum naar string representatie." alt="" coords="368,107,448,133"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="285,81,353,101,352,106,283,86"/>
+</map>

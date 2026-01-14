@@ -1,0 +1,7 @@
+<map id="API_draw_line" name="API_draw_line">
+<area shape="rect" id="Node000001" title="API functie met toepassing van het Bresenhams lijnalgoritme voor het maken van lijnen in de VGA buffe..." alt="" coords="279,5,384,32"/>
+<area shape="rect" id="Node000002" href="$logic_8c.html#aa36c162e4bd37b2765aec9b0c67aa4e7" title="Tekent een lijn op het scherm." alt="" coords="118,5,231,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="263,21,231,21,231,16,263,16"/>
+<area shape="rect" id="Node000003" href="$msg__parsing_8c.html#acbd9d4593c8e6cf342aaaa377460c375" title="functie om de logic layer aan te sturen (lijn)" alt="" coords="5,5,70,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="102,21,70,21,70,16,102,16"/>
+</map>

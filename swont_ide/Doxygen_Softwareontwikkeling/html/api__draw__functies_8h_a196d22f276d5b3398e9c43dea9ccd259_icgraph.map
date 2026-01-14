@@ -1,0 +1,7 @@
+<map id="API_draw_bitmap" name="API_draw_bitmap">
+<area shape="rect" id="Node000001" title="API functie dat een bitmap zoal deze in de flash is opgeslagen in bitmaps.h in de VGA buffer print." alt="" coords="321,5,445,32"/>
+<area shape="rect" id="Node000002" href="$logic_8c.html#ae5d803396f94fb44b574010871c8a8be" title="Tekent een bitmap op het scherm." alt="" coords="141,5,273,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="305,21,274,21,274,16,305,16"/>
+<area shape="rect" id="Node000003" href="$msg__parsing_8c.html#a9a00baf25b42562aa03e44c171ce31a7" title="functie om de logic layer aan te sturen (bitmap)" alt="" coords="5,5,93,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="125,21,93,21,93,16,125,16"/>
+</map>

@@ -1,0 +1,22 @@
+<map id="C:/Users/Melle/SoftOnt/softwareont/swont_ide/Core/FrontLayer/msg_parsing.h" name="C:/Users/Melle/SoftOnt/softwareont/swont_ide/Core/FrontLayer/msg_parsing.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="281,5,489,64"/>
+<area shape="rect" id="Node000002" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="321,112,382,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="377,65,364,98,359,96,372,63"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,187,66,213"/>
+<area shape="poly" id="edge9_Node000001_Node000005" title=" " alt="" coords="325,67,77,182,75,177,322,62"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="594,187,658,213"/>
+<area shape="poly" id="edge10_Node000001_Node000006" title=" " alt="" coords="397,63,417,101,430,120,446,136,498,157,580,182,578,187,496,162,443,141,426,124,412,104,392,65"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="457,112,518,139"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="420,62,463,99,460,104,416,66"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="90,187,208,213"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="322,140,200,183,198,178,320,135"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="231,187,296,213"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="338,141,292,179,289,175,334,137"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="322,135,81,189,80,184,320,130"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="383,132,580,183,578,188,381,137"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="320,187,383,213"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="354,139,354,171,349,171,349,139"/>
+<area shape="rect" id="Node000008" href="$stm32__ub__vga__screen_8h.html" title=" " alt="" coords="407,187,570,213"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="370,137,445,177,443,182,367,142"/>
+<area shape="poly" id="edge8_Node000008_Node000002" title=" " alt="" coords="471,189,395,148,397,143,473,184"/>
+</map>

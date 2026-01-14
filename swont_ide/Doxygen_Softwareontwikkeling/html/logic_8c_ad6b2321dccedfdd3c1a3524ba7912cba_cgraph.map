@@ -1,0 +1,14 @@
+<map id="logicAPICalltxt" name="logicAPICalltxt">
+<area shape="rect" id="Node000001" title="Tekent tekst op het scherm." alt="" coords="5,56,114,83"/>
+<area shape="rect" id="Node000002" href="$api__draw__functies_8c.html#a54965b9feb419ec87c4a07b813b7c976" title="API functie om tekst te printen in de VGA buffer." alt="" coords="162,81,269,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,75,147,81,146,86,114,81"/>
+<area shape="rect" id="Node000003" href="$error_8c.html#a770d231c828a5d2f8a23febb773f2e0a" title="Rapporteert fout via UART in gestandaardiseerd formaat." alt="" coords="335,31,430,57"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="114,62,319,46,320,52,114,68"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="261,78,321,60,322,65,263,83"/>
+<area shape="rect" id="Node000006" href="$stm32__ub__vga__screen_8c.html#a1fd52b52c87572b4bfad9637ec34e621" title=" " alt="" coords="317,81,448,108"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="269,92,301,92,301,97,269,97"/>
+<area shape="rect" id="Node000004" href="$error_8c.html#a59f28e32fd77b4af48ccd910322cd32f" title="Converteert ErrorCode_t enum naar string representatie." alt="" coords="497,5,576,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="430,34,482,25,483,30,431,39"/>
+<area shape="rect" id="Node000005" href="$error_8c.html#a5d97802e1238aecc91cff9c0cfa3ae02" title="Converteert ErrorLayer_t enum naar string representatie." alt="" coords="496,56,577,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="431,49,482,58,481,63,430,54"/>
+</map>

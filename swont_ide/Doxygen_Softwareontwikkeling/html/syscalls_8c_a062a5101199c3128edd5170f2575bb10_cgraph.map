@@ -1,0 +1,9 @@
+<map id="_kill" name="_kill">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,50,57"/>
+<area shape="rect" id="Node000002" href="$error_8c.html#a770d231c828a5d2f8a23febb773f2e0a" title="Rapporteert fout via UART in gestandaardiseerd formaat." alt="" coords="98,31,193,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="50,41,82,41,82,47,50,47"/>
+<area shape="rect" id="Node000003" href="$error_8c.html#a59f28e32fd77b4af48ccd910322cd32f" title="Converteert ErrorCode_t enum naar string representatie." alt="" coords="242,5,320,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="193,32,226,26,227,31,194,38"/>
+<area shape="rect" id="Node000004" href="$error_8c.html#a5d97802e1238aecc91cff9c0cfa3ae02" title="Converteert ErrorLayer_t enum naar string representatie." alt="" coords="241,56,321,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="194,50,226,56,225,62,193,56"/>
+</map>

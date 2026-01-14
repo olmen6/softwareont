@@ -1,0 +1,9 @@
+<map id="call_wacht" name="call_wacht">
+<area shape="rect" id="Node000001" title="functie om de logic layer aan te sturen (wacht)" alt="" coords="5,31,89,57"/>
+<area shape="rect" id="Node000002" href="$error_8c.html#a770d231c828a5d2f8a23febb773f2e0a" title="Rapporteert fout via UART in gestandaardiseerd formaat." alt="" coords="137,31,232,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,41,121,41,121,47,89,47"/>
+<area shape="rect" id="Node000003" href="$error_8c.html#a59f28e32fd77b4af48ccd910322cd32f" title="Converteert ErrorCode_t enum naar string representatie." alt="" coords="281,5,359,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="232,32,265,26,266,31,233,38"/>
+<area shape="rect" id="Node000004" href="$error_8c.html#a5d97802e1238aecc91cff9c0cfa3ae02" title="Converteert ErrorLayer_t enum naar string representatie." alt="" coords="280,56,360,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="233,50,265,56,264,62,232,56"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="logicAPICallcirkel" name="logicAPICallcirkel">
+<area shape="rect" id="Node000001" title="Tekent een cirkel op het scherm." alt="" coords="133,5,257,32"/>
+<area shape="rect" id="Node000002" href="$msg__parsing_8c.html#ac8e07f04d084258bbbdaf8da9ecbd31b" title="functie om de logic layer aan te sturen (cirkel)" alt="" coords="5,5,85,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,21,85,21,85,16,117,16"/>
+</map>

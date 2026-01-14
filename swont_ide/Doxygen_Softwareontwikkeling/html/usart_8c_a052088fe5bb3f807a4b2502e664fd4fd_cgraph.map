@@ -1,0 +1,14 @@
+<map id="MX_USART2_UART_Init" name="MX_USART2_UART_Init">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,174,83"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="254,5,355,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,53,238,31,239,37,150,58"/>
+<area shape="rect" id="Node000003" href="$error_8c.html#a770d231c828a5d2f8a23febb773f2e0a" title="Rapporteert fout via UART in gestandaardiseerd formaat." alt="" coords="435,31,530,57"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="174,61,420,45,420,51,174,67"/>
+<area shape="rect" id="Node000006" href="$error_8c.html#acb670c4a201b3f56aa9478f112d42eaa" title="Converteert HAL status codes naar ErrorCode_t." alt="" coords="222,107,387,133"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="150,81,231,100,229,105,149,86"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="356,23,420,32,419,38,355,28"/>
+<area shape="rect" id="Node000004" href="$error_8c.html#a59f28e32fd77b4af48ccd910322cd32f" title="Converteert ErrorCode_t enum naar string representatie." alt="" coords="579,5,658,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="530,32,563,26,564,31,531,38"/>
+<area shape="rect" id="Node000005" href="$error_8c.html#a5d97802e1238aecc91cff9c0cfa3ae02" title="Converteert ErrorLayer_t enum naar string representatie." alt="" coords="578,56,659,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="531,50,563,56,562,62,530,56"/>
+</map>

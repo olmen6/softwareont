@@ -1,0 +1,16 @@
+<map id="C:/Users/Melle/SoftOnt/softwareont/swont_ide/Core/Inc/main.h" name="C:/Users/Melle/SoftOnt/softwareont/swont_ide/Core/Inc/main.h">
+<area shape="rect" id="Node000001" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="273,5,431,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,112,123,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="273,63,120,110,119,104,272,58"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="146,112,211,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="297,67,218,107,215,102,295,62"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="235,112,296,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="326,66,290,103,286,99,322,62"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="320,112,384,139"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="355,64,355,96,349,96,349,64"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="408,112,472,139"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="382,62,419,99,415,103,378,66"/>
+<area shape="rect" id="Node000007" href="$stm32__ub__vga__screen_8h.html" title=" " alt="" coords="496,112,659,139"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="418,62,526,104,524,109,416,67"/>
+<area shape="poly" id="edge7_Node000007_Node000001" title=" " alt="" coords="551,114,445,72,447,67,553,109"/>
+</map>

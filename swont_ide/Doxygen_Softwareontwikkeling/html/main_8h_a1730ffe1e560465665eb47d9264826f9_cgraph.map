@@ -1,0 +1,9 @@
+<map id="Error_Handler" name="Error_Handler">
+<area shape="rect" id="Node000001" title="This function is executed in case of error occurrence." alt="" coords="5,31,107,57"/>
+<area shape="rect" id="Node000002" href="$error_8c.html#a770d231c828a5d2f8a23febb773f2e0a" title="Rapporteert fout via UART in gestandaardiseerd formaat." alt="" coords="155,31,250,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,41,139,41,139,47,107,47"/>
+<area shape="rect" id="Node000003" href="$error_8c.html#a59f28e32fd77b4af48ccd910322cd32f" title="Converteert ErrorCode_t enum naar string representatie." alt="" coords="299,5,377,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="250,32,283,26,284,31,251,38"/>
+<area shape="rect" id="Node000004" href="$error_8c.html#a5d97802e1238aecc91cff9c0cfa3ae02" title="Converteert ErrorLayer_t enum naar string representatie." alt="" coords="298,56,378,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="251,50,283,56,282,62,250,56"/>
+</map>

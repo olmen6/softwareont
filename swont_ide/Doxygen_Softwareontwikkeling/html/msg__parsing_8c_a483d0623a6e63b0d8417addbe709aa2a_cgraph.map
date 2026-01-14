@@ -1,0 +1,9 @@
+<map id="call_herhaal" name="call_herhaal">
+<area shape="rect" id="Node000001" title="functie om de logic layer aan te sturen (herhaal)" alt="" coords="5,31,96,57"/>
+<area shape="rect" id="Node000002" href="$error_8c.html#a770d231c828a5d2f8a23febb773f2e0a" title="Rapporteert fout via UART in gestandaardiseerd formaat." alt="" coords="144,31,239,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,41,128,41,128,47,96,47"/>
+<area shape="rect" id="Node000003" href="$error_8c.html#a59f28e32fd77b4af48ccd910322cd32f" title="Converteert ErrorCode_t enum naar string representatie." alt="" coords="288,5,366,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="239,32,272,26,273,31,240,38"/>
+<area shape="rect" id="Node000004" href="$error_8c.html#a5d97802e1238aecc91cff9c0cfa3ae02" title="Converteert ErrorLayer_t enum naar string representatie." alt="" coords="287,56,367,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="240,50,272,56,271,62,239,56"/>
+</map>

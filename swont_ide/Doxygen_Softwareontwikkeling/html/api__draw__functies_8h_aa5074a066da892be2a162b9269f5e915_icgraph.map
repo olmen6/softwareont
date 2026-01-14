@@ -1,0 +1,7 @@
+<map id="API_draw_circle" name="API_draw_circle">
+<area shape="rect" id="Node000001" title="API functie om een cirkel in de VGA buffer te maken van een bepaalde kleur. de dikte of opvulling hie..." alt="" coords="305,5,421,32"/>
+<area shape="rect" id="Node000002" href="$logic_8c.html#ac311aec3b0373c8b047adb1423d7ecd7" title="Tekent een cirkel op het scherm." alt="" coords="133,5,257,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="289,21,257,21,257,16,289,16"/>
+<area shape="rect" id="Node000003" href="$msg__parsing_8c.html#ac8e07f04d084258bbbdaf8da9ecbd31b" title="functie om de logic layer aan te sturen (cirkel)" alt="" coords="5,5,85,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="117,21,85,21,85,16,117,16"/>
+</map>

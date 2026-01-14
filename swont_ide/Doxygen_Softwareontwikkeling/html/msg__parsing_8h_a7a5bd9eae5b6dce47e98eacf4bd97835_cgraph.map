@@ -1,0 +1,17 @@
+<map id="call_rechthoek" name="call_rechthoek">
+<area shape="rect" id="Node000001" title="functie om de logic layer aan te sturen (rechthoek)" alt="" coords="5,5,111,32"/>
+<area shape="rect" id="Node000002" href="$error_8c.html#a770d231c828a5d2f8a23febb773f2e0a" title="Rapporteert fout via UART in gestandaardiseerd formaat." alt="" coords="567,31,663,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,14,285,12,393,15,502,23,553,30,552,35,501,28,393,20,285,17,111,19"/>
+<area shape="rect" id="Node000005" href="$logic_8c.html#a1821cca421d27c7ac9ec218e1a1f2925" title="Tekent een rechthoek op het scherm." alt="" coords="159,31,315,57"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="112,23,144,28,143,33,111,29"/>
+<area shape="rect" id="Node000003" href="$error_8c.html#a59f28e32fd77b4af48ccd910322cd32f" title="Converteert ErrorCode_t enum naar string representatie." alt="" coords="730,5,808,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="662,34,714,25,715,30,663,39"/>
+<area shape="rect" id="Node000004" href="$error_8c.html#a5d97802e1238aecc91cff9c0cfa3ae02" title="Converteert ErrorLayer_t enum naar string representatie." alt="" coords="729,56,809,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="663,49,714,58,713,63,662,54"/>
+<area shape="poly" id="edge8_Node000005_Node000002" title=" " alt="" coords="316,41,552,41,552,47,316,47"/>
+<area shape="rect" id="Node000006" href="$api__draw__functies_8c.html#a930224439b55fa71369f5d62dfba7a38" title="API functie om een rechthoek te maken in de VGA buffer." alt="" coords="363,81,501,108"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="292,55,364,74,363,79,291,61"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="482,78,552,59,554,64,484,83"/>
+<area shape="rect" id="Node000007" href="$stm32__ub__vga__screen_8c.html#a1fd52b52c87572b4bfad9637ec34e621" title=" " alt="" coords="549,81,681,108"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="502,92,534,92,534,97,502,97"/>
+</map>

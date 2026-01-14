@@ -1,0 +1,9 @@
+<map id="process_msg" name="process_msg">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,105,57"/>
+<area shape="rect" id="Node000002" href="$error_8c.html#a770d231c828a5d2f8a23febb773f2e0a" title="Rapporteert fout via UART in gestandaardiseerd formaat." alt="" coords="153,31,248,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,41,137,41,137,47,105,47"/>
+<area shape="rect" id="Node000003" href="$error_8c.html#a59f28e32fd77b4af48ccd910322cd32f" title="Converteert ErrorCode_t enum naar string representatie." alt="" coords="297,5,375,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="248,32,281,26,282,31,249,38"/>
+<area shape="rect" id="Node000004" href="$error_8c.html#a5d97802e1238aecc91cff9c0cfa3ae02" title="Converteert ErrorLayer_t enum naar string representatie." alt="" coords="296,56,376,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="249,50,281,56,280,62,248,56"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="API_draw_circle" name="API_draw_circle">
+<area shape="rect" id="Node000001" title="API functie om een cirkel in de VGA buffer te maken van een bepaalde kleur. de dikte of opvulling hie..." alt="" coords="5,5,122,32"/>
+<area shape="rect" id="Node000002" href="$stm32__ub__vga__screen_8c.html#a1fd52b52c87572b4bfad9637ec34e621" title=" " alt="" coords="170,5,301,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,16,154,16,154,21,122,21"/>
+</map>

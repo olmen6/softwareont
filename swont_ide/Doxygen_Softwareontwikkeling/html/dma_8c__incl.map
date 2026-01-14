@@ -1,0 +1,20 @@
+<map id="C:/Users/Melle/SoftOnt/softwareont/swont_ide/Core/Src/dma.c" name="C:/Users/Melle/SoftOnt/softwareont/swont_ide/Core/Src/dma.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="273,5,431,64"/>
+<area shape="rect" id="Node000002" href="$dma_8h.html" title=" " alt="" coords="323,112,381,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="355,64,355,96,349,96,349,64"/>
+<area shape="rect" id="Node000003" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="322,187,382,213"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="355,139,355,171,349,171,349,139"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,261,123,288"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="322,212,130,260,128,254,321,206"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="146,261,211,288"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="323,216,224,257,222,252,321,211"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="235,261,296,288"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="339,216,293,253,290,249,335,212"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="320,261,384,288"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="355,214,355,246,349,246,349,214"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="408,261,472,288"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="369,212,415,249,411,253,366,216"/>
+<area shape="rect" id="Node000009" href="$stm32__ub__vga__screen_8h.html" title=" " alt="" coords="496,261,659,288"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="384,211,517,254,515,259,382,216"/>
+<area shape="poly" id="edge9_Node000009_Node000003" title=" " alt="" coords="544,263,396,216,398,211,546,258"/>
+</map>
